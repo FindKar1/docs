@@ -7,23 +7,23 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#BE48E6",
+    "light": "#BE48E6",
+    "dark": "#BE48E6",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#9024B5",
+      "to": "#BE48E6"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "team@bytespace.ai"
     }
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://www.bytespace.ai/dashboard"
   },
   "tabs": [
     {
@@ -39,8 +39,8 @@
     },
     {
       "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "icon": "discord",
+      "url": "https://discord.gg/KPdaRCkU"
     },
     {
       "name": "Blog",
@@ -84,8 +84,8 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "x": "https://x.com/BytespaceAI",
+    "youtube": "https://www.youtube.com/@bytespace-ai",
+    "linkedin": "https://www.linkedin.com/company/bytespace-ai/?viewAsMember=true"
   }
 }
