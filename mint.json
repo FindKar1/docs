@@ -43,16 +43,82 @@
       "url": "https://discord.gg/KPdaRCkU"
     },
     {
-      "name": "Blog",
+      "name": "FAQs",
       "icon": "newspaper",
       "url": "https://mintlify.com/blog"
     }
   ],
   "navigation": [
     {
+      "group": "",
+      "pages": [
+        "welcome",
+        "release-notes"
+      ]
+    },
+    {
+      "group": "Quick Start",
+      "pages": [
+        "getting-set-up",
+        "platform-overview"
+      ]
+    },
+    {
+      "group": "Web Agent Builder",
+      "pages": [
+        "platform-overview",
+        "ways-to-build",
+        "tutorials",
+        {
+          "group": "Builder Tools",
+          "pages": [
+            "bytespacedocs/builder-tools/element-picker",
+            "bytespacedocs/builder-tools/nodes",
+            "bytespacedocs/builder-tools/enhance-selector",
+            "bytespacedocs/builder-tools/ai-debugger",
+            "bytespacedocs/builder-tools/test-run",
+            "bytespacedocs/builder-tools/run",
+            "bytespacedocs/builder-tools/deploy",
+            "bytespacedocs/builder-tools/logs"
+          ]
+        },
+        {
+          "group": "Automation Blocks",
+          "pages": [
+            "bytespacedocs/automation-blocks/web-navigation",
+            "bytespacedocs/automation-blocks/web-actions",
+            "bytespacedocs/automation-blocks/data-management",
+            "bytespacedocs/automation-blocks/ai-blocks",
+            "bytespacedocs/automation-blocks/loops-conditions"
+          ]
+        },
+        "best-practices",
+        "templates",
+        "troubleshooting"
+      ]
+    },
+    {
+      "group": "Deploy Apps",
+      "pages": [
+        "marketplace"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "api"
+      ]
+    },
+    {
+      "group": "Misc. Resources",
+      "pages": [
+        "community"
+      ]
+    },
+    {
       "group": "Get Started",
       "pages": [
-        "introduction",
+        "introduction1",
         "quickstart",
         "development"
       ]
@@ -87,5 +153,8 @@
     "x": "https://x.com/BytespaceAI",
     "youtube": "https://www.youtube.com/@bytespace-ai",
     "linkedin": "https://www.linkedin.com/company/bytespace-ai/?viewAsMember=true"
+  },
+  "style": {
+    "css": "/style.css"
   }
 }

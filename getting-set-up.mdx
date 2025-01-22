@@ -1,0 +1,91 @@
+---
+title: 'Getting Set Up'
+description: 'Step-by-step guide to building and deploying web agents'
+---
+
+## Build Your Web-Agent on Bytespace
+
+This guide walks you through the steps to build, test, and run your first web agent on Bytespace. You'll also get a glimpse of future features like deploying agents on virtual machines and integrating them with other apps.
+
+---
+
+### 1. Requirements
+
+Before you get started, make sure you:
+
+- [**Create a Bytespace Account**](https://www.bytespace.ai/login)
+- [**Install Google Chrome Browser**](https://www.google.com/chrome/)\*: this browser is required in order to run automations.
+- **Install Bytespace Chrome Extension**: required in order to operate the builder, create workflows, and run your automations.
+
+<Note>
+\* Make sure to have only one Google Chrome browser open while building and testing your automations. Having multiple browsers open can cause issues with selector verification.
+</Note>
+
+---
+
+### 2. Build Your Web-Agent, Step by Step
+
+Start building your web agent using the **Bytespace** **Web-Agent Builder**. Most of you will use a mixture of AI prompting and recording to create the global workflow structure and Manual Editing to refine specific steps. For more complex workflows, we recommend AI Prompting + Manual Editing.
+
+- **Prompting**: Describe what you want your agent to do using natural language. Keep your description to single actions on websites (ex. click Search button)
+- **Recording**: Use the Chrome Extension to record your workflow using actions like clicks, scrolls, and data entry.
+- **Manual Editing**: Fine-tune workflows by customizing individual automation blocks in the builder. Blocks represent steps in the workflow.
+
+---
+
+### 3. Test Your Web-Agent in the Builder
+
+Run your agent directly in the builder to ensure it works as expected. Debug issues, refine workflows, and verify that all actions execute correctly on the target website. There's a few way to test:
+
+- **Test Entire Workflow**: will run the workflow from start to finish.
+- **Test Workflow from a Specific Step**: hovering over an automation block and clicking the "Run" button above it, will run the workflow from that specific point.
+- **Test Only a Single Step**/*: once you click into an automation block, you can choose to run only that step from the expanded block view.
+
+<Warning>
+**Important:** if testing individual steps, or testing a workflow midway through, have your Google Chrome Browser open to the area of the website where that specific step starts.
+</Warning>
+
+---
+
+### 4. Run Your Web-Agent in Two Ways
+
+- **On Your Personal Computer (Locally)**: Run the agent directly on your machine for quick, one-off workflows. While running locally, your computer will be occupied and unavailable for other tasks.
+
+- **In the Cloud *(Coming Soon)***: Deploy your agent to Bytespace's cloud infrastructure for 24/7 automation. Cloud execution uses virtual machines, residential proxies to bypass geo-restrictions, and tools to handle authentication and captchas seamlessly, freeing up your personal computer.
+
+---
+
+### 5. Connect Web-Agents to Other Apps *(Coming Soon)*
+
+Integrate your web agents with other tools and platforms using the Bytespace API. This feature will allow you to:
+
+- Call agents from platforms like Zapier, Make, or your custom applications.
+- Extend workflows by combining Bytespace automation with existing tools.
+
+---
+
+### Ready to Get Started?
+
+<CardGroup>
+  <Card
+    title="Set Up Your Environment"
+    icon="wrench"
+    href="/platform-overview"
+  >
+    Install the Chrome Extension and sign in to your account.
+  </Card>
+  <Card
+    title="Build Your First Agent"
+    icon="wand-magic-sparkles"
+    href="/tutorials"
+  >
+    Follow our step-by-step guide to create a web agent.
+  </Card>
+  <Card
+    title="Explore Templates"
+    icon="box-archive"
+    href="/templates"
+  >
+    Jumpstart your workflow with pre-built automations.
+  </Card>
+</CardGroup> 
