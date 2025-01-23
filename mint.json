@@ -52,23 +52,103 @@
     {
       "group": "",
       "pages": [
-        "welcome",
-        "release-notes"
+        "bytespacedocs/welcome",
+        "bytespacedocs/release-notes"
       ]
     },
     {
-      "group": "Quick Start",
+      "group": "New to Bytespace?",
       "pages": [
-        "getting-set-up",
-        "platform-overview"
+        {
+          "group": "Start here",
+          "icon": "font-awesome",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/install-bytespace",
+            "bytespacedocs/new-to-bytespace/start-here/build-web-agent",
+            "bytespacedocs/new-to-bytespace/start-here/test-workflow",
+            "bytespacedocs/new-to-bytespace/start-here/run-agent",
+            "bytespacedocs/new-to-bytespace/start-here/deploy"
+          ]
+        },
+        {
+          "group": "Tutorials",
+          "icon": "tv",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/LinkedIn",
+            "bytespacedocs/new-to-bytespace/start-here/Twitter",
+            "bytespacedocs/new-to-bytespace/start-here/Instagram",
+            "bytespacedocs/new-to-bytespace/start-here/YouTube",
+            "bytespacedocs/new-to-bytespace/start-here/Facebook",
+            "bytespacedocs/new-to-bytespace/start-here/Reddit"
+          ]
+        },
+        {
+          "group": "Templates",
+          "icon": "share-nodes",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/LinkedIn",
+            "bytespacedocs/new-to-bytespace/start-here/Twitter",
+            "bytespacedocs/new-to-bytespace/start-here/Instagram",
+            "bytespacedocs/new-to-bytespace/start-here/YouTube",
+            "bytespacedocs/new-to-bytespace/start-here/Facebook",
+            "bytespacedocs/new-to-bytespace/start-here/Reddit"
+          ]
+        },
+        {
+          "group": "Tools",
+          "icon": "screwdriver-wrench",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/Element-selector",
+            "bytespacedocs/new-to-bytespace/start-here/Nodes",
+            "bytespacedocs/new-to-bytespace/start-here/Enhance-selector",
+            "bytespacedocs/new-to-bytespace/start-here/AI-debugger",
+            "bytespacedocs/new-to-bytespace/start-here/Test-run",
+            "bytespacedocs/new-to-bytespace/start-here/Logs"
+          ]
+        }
       ]
     },
     {
       "group": "Web Agent Builder",
       "pages": [
-        "platform-overview",
-        "ways-to-build",
-        "tutorials",
+        "bytespacedocs/What-is-the-builder",
+        {
+          "group": "Navigation",
+          "icon": "globe",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/open-page"
+          ]
+        },
+        {
+          "group": "Actions",
+          "icon": "computer-mouse",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/click-element"
+          ]
+        },
+        {
+          "group": "Loops & Conditions",
+          "icon": "arrows-rotate",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/click-element"
+          ]
+        },
+        {
+          "group": "AI Blocks",
+          "icon": "wand-magic-sparkles",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/click-element"
+          ]
+        },
+        {
+          "group": "Data Management",
+          "icon": "database",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/click-element"
+          ]
+        },
+        "bytespacedocs/ways-to-build",
+        "bytespacedocs/tutorials",
         {
           "group": "Builder Tools",
           "pages": [
@@ -118,9 +198,9 @@
     {
       "group": "Get Started",
       "pages": [
-        "introduction1",
-        "quickstart",
-        "development"
+        "bytespacedocs/introduction1",
+        "bytespacedocs/quickstart",
+        "bytespacedocs/development"
       ]
     },
     {
