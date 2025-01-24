@@ -32,27 +32,12 @@
     }
   ],
   "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://discord.gg/KPdaRCkU"
-    },
-    {
-      "name": "FAQs",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
   ],
   "navigation": [
     {
-      "group": "",
+      "group": "Docs",
       "pages": [
-        "bytespacedocs/welcome",
+        "bytespacedocs/welcome", 
         "bytespacedocs/release-notes"
       ]
     },
@@ -95,8 +80,20 @@
           ]
         },
         {
-          "group": "Tools",
-          "icon": "screwdriver-wrench",
+          "group": "Best Practices",
+          "icon": "lightbulb",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/LinkedIn",
+            "bytespacedocs/new-to-bytespace/start-here/Twitter",
+            "bytespacedocs/new-to-bytespace/start-here/Instagram",
+            "bytespacedocs/new-to-bytespace/start-here/YouTube",
+            "bytespacedocs/new-to-bytespace/start-here/Facebook",
+            "bytespacedocs/new-to-bytespace/start-here/Reddit"
+          ]
+        },
+        {
+          "group": "Troubleshooting",
+          "icon": "triangle-exclamation",
           "pages": [
             "bytespacedocs/new-to-bytespace/start-here/Element-selector",
             "bytespacedocs/new-to-bytespace/start-here/Nodes",
@@ -111,7 +108,19 @@
     {
       "group": "Web Agent Builder",
       "pages": [
-        "bytespacedocs/What-is-the-builder",
+        "bytespacedocs/overview",
+        {
+          "group": "Tools",
+          "icon": "screwdriver-wrench",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/Element-selector",
+            "bytespacedocs/new-to-bytespace/start-here/Nodes",
+            "bytespacedocs/new-to-bytespace/start-here/Enhance-selector",
+            "bytespacedocs/new-to-bytespace/start-here/AI-debugger",
+            "bytespacedocs/new-to-bytespace/start-here/Test-run",
+            "bytespacedocs/new-to-bytespace/start-here/Logs"
+          ]
+        },
         {
           "group": "Navigation",
           "icon": "globe",
@@ -147,56 +156,26 @@
             "bytespacedocs/new-to-bytespace/start-here/click-element"
           ]
         },
-        "bytespacedocs/ways-to-build",
-        "bytespacedocs/tutorials",
         {
-          "group": "Builder Tools",
+          "group": "Settings",
+          "icon": "gear",
           "pages": [
-            "bytespacedocs/builder-tools/element-picker",
-            "bytespacedocs/builder-tools/nodes",
-            "bytespacedocs/builder-tools/enhance-selector",
-            "bytespacedocs/builder-tools/ai-debugger",
-            "bytespacedocs/builder-tools/test-run",
-            "bytespacedocs/builder-tools/run",
-            "bytespacedocs/builder-tools/deploy",
-            "bytespacedocs/builder-tools/logs"
+            "bytespacedocs/new-to-bytespace/start-here/click-element"
           ]
-        },
-        {
-          "group": "Automation Blocks",
-          "pages": [
-            "bytespacedocs/automation-blocks/web-navigation",
-            "bytespacedocs/automation-blocks/web-actions",
-            "bytespacedocs/automation-blocks/data-management",
-            "bytespacedocs/automation-blocks/ai-blocks",
-            "bytespacedocs/automation-blocks/loops-conditions"
-          ]
-        },
-        "best-practices",
-        "templates",
-        "troubleshooting"
+        }
       ]
     },
     {
-      "group": "Deploy Apps",
+      "group": "Resources",
       "pages": [
-        "marketplace"
+        "community",
+        "billing",
+        "FAQs",
+        "glossary"
       ]
     },
     {
-      "group": "Integrations",
-      "pages": [
-        "api"
-      ]
-    },
-    {
-      "group": "Misc. Resources",
-      "pages": [
-        "community"
-      ]
-    },
-    {
-      "group": "Get Started",
+      "group": "Mintly",
       "pages": [
         "bytespacedocs/introduction1",
         "bytespacedocs/quickstart",
