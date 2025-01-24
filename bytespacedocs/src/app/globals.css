@@ -19,3 +19,13 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  nav [data-active="true"] {
+    @apply border-l-2 border-l-primary bg-primary/10 -ml-[1px] pl-[13px] !important;
+  }
+
+  nav [data-active="false"]:hover {
+    @apply border-l-2 border-l-primary/50 -ml-[1px] pl-[13px] !important;
+  }
+}

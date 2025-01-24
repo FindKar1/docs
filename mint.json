@@ -37,8 +37,7 @@
     {
       "group": "Docs",
       "pages": [
-        "bytespacedocs/welcome", 
-        "bytespacedocs/release-notes"
+        "bytespacedocs/welcome"
       ]
     },
     {
@@ -56,51 +55,58 @@
           ]
         },
         {
+          "group": "Tools",
+          "icon": "screwdriver-wrench",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/tools/Element-selector",
+            "bytespacedocs/new-to-bytespace/tools/Nodes",
+            "bytespacedocs/new-to-bytespace/tools/Enhance-selector",
+            "bytespacedocs/new-to-bytespace/tools/AI-debugger",
+            "bytespacedocs/new-to-bytespace/tools/Test-run",
+            "bytespacedocs/new-to-bytespace/tools/Logs"
+          ]
+        },
+        {
           "group": "Tutorials",
           "icon": "tv",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/LinkedIn",
-            "bytespacedocs/new-to-bytespace/start-here/Twitter",
-            "bytespacedocs/new-to-bytespace/start-here/Instagram",
-            "bytespacedocs/new-to-bytespace/start-here/YouTube",
-            "bytespacedocs/new-to-bytespace/start-here/Facebook",
-            "bytespacedocs/new-to-bytespace/start-here/Reddit"
+            "bytespacedocs/new-to-bytespace/tutorials/linkedin-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/twitter-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/instagram-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/youtube-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/facebook-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/gmail-tutorial"
           ]
         },
         {
           "group": "Templates",
           "icon": "share-nodes",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/LinkedIn",
-            "bytespacedocs/new-to-bytespace/start-here/Twitter",
-            "bytespacedocs/new-to-bytespace/start-here/Instagram",
-            "bytespacedocs/new-to-bytespace/start-here/YouTube",
-            "bytespacedocs/new-to-bytespace/start-here/Facebook",
-            "bytespacedocs/new-to-bytespace/start-here/Reddit"
+            "bytespacedocs/new-to-bytespace/templates/linkedin-template",
+            "bytespacedocs/new-to-bytespace/templates/twitter-template",
+            "bytespacedocs/new-to-bytespace/templates/instagram-template",
+            "bytespacedocs/new-to-bytespace/templates/youtube-template",
+            "bytespacedocs/new-to-bytespace/templates/facebook-template",
+            "bytespacedocs/new-to-bytespace/templates/gmail-template"
           ]
         },
         {
           "group": "Best Practices",
           "icon": "lightbulb",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/LinkedIn",
-            "bytespacedocs/new-to-bytespace/start-here/Twitter",
-            "bytespacedocs/new-to-bytespace/start-here/Instagram",
-            "bytespacedocs/new-to-bytespace/start-here/YouTube",
-            "bytespacedocs/new-to-bytespace/start-here/Facebook",
-            "bytespacedocs/new-to-bytespace/start-here/Reddit"
+              "bytespacedocs/new-to-bytespace/best-practices/linkedin-best-practices"
           ]
         },
         {
           "group": "Troubleshooting",
           "icon": "triangle-exclamation",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/Element-selector",
-            "bytespacedocs/new-to-bytespace/start-here/Nodes",
-            "bytespacedocs/new-to-bytespace/start-here/Enhance-selector",
-            "bytespacedocs/new-to-bytespace/start-here/AI-debugger",
-            "bytespacedocs/new-to-bytespace/start-here/Test-run",
-            "bytespacedocs/new-to-bytespace/start-here/Logs"
+            "bytespacedocs/new-to-bytespace/troubleshooting/Element-selector",
+            "bytespacedocs/new-to-bytespace/troubleshooting/nodes",
+            "bytespacedocs/new-to-bytespace/troubleshooting/enhance-selector",
+            "bytespacedocs/new-to-bytespace/troubleshooting/ai-debugger",
+            "bytespacedocs/new-to-bytespace/troubleshooting/test-run",
+            "bytespacedocs/new-to-bytespace/troubleshooting/logs"
           ]
         }
       ]
@@ -109,18 +115,6 @@
       "group": "Web Agent Builder",
       "pages": [
         "bytespacedocs/overview",
-        {
-          "group": "Tools",
-          "icon": "screwdriver-wrench",
-          "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/Element-selector",
-            "bytespacedocs/new-to-bytespace/start-here/Nodes",
-            "bytespacedocs/new-to-bytespace/start-here/Enhance-selector",
-            "bytespacedocs/new-to-bytespace/start-here/AI-debugger",
-            "bytespacedocs/new-to-bytespace/start-here/Test-run",
-            "bytespacedocs/new-to-bytespace/start-here/Logs"
-          ]
-        },
         {
           "group": "Navigation",
           "icon": "globe",
@@ -168,6 +162,7 @@
     {
       "group": "Resources",
       "pages": [
+        "bytespacedocs/release-notes",
         "community",
         "billing",
         "FAQs",
@@ -212,8 +207,5 @@
     "x": "https://x.com/BytespaceAI",
     "youtube": "https://www.youtube.com/@bytespace-ai",
     "linkedin": "https://www.linkedin.com/company/bytespace-ai/?viewAsMember=true"
-  },
-  "style": {
-    "css": "/style.css"
   }
 }
