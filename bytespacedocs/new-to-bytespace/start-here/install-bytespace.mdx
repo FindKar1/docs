@@ -1,91 +1,86 @@
 ---
-title: 'Install Bytespace'
-description: 'Step-by-step guide to building and deploying web agents'
+title: "Install Bytespace 🚀"
+description: "So, you're ready to start automating your work? Let's go! Before jumping in, let's make sure you have all the essentials."
 ---
 
-## Build Your Web-Agent on Bytespace
+### 1. Get set up 📋 <span className="text-sm text-gray-400">*(required)*</span>
 
-This guide walks you through the steps to build, test, and run your first web agent on Bytespace. You'll also get a glimpse of future features like deploying agents on virtual machines and integrating them with other apps.
-
----
-
-### 1. Requirements
-
-Before you get started, make sure you:
-
-- [**Create a Bytespace Account**](https://www.bytespace.ai/login)
-- [**Install Google Chrome Browser**](https://www.google.com/chrome/)\*: this browser is required in order to run automations.
-- **Install Bytespace Chrome Extension**: required in order to operate the builder, create workflows, and run your automations.
+<CardGroup cols={3}>
+  <Card
+    title="Create Account"
+    icon="user"
+    href="https://www.bytespace.ai/login"
+  >
+    Sign up for your Bytespace account to start automating
+  </Card>
+  
+  <Card
+    title="Install Google Chrome"
+    icon="chrome"
+    href="https://www.google.com/chrome/"
+  >
+    Our automations work exclusively on Chrome
+  </Card>
+  
+  <Card
+    title="Add Extension"
+    icon="puzzle-piece"
+    href="https://chrome.google.com/webstore/detail/bytespace"
+  >
+    Gives access to the builder and automation tools
+  </Card>
+</CardGroup>
 
 <Note>
-\* Make sure to have only one Google Chrome browser open while building and testing your automations. Having multiple browsers open can cause issues with selector verification.
+**Important:*** Close any extra Chrome windows before building workflows. Multiple browser windows open can mess with selector verification.
 </Note>
 
----
+### 2. Join the community 🎉 <span className="text-sm text-gray-400">*(highly recommended)*</span>
 
-### 2. Build Your Web-Agent, Step by Step
+Automation doesn't have to be lonely! Our community is here to help you succeed.
 
-Start building your web agent using the **Bytespace** **Web-Agent Builder**. Most of you will use a mixture of AI prompting and recording to create the global workflow structure and Manual Editing to refine specific steps. For more complex workflows, we recommend AI Prompting + Manual Editing.
-
-- **Prompting**: Describe what you want your agent to do using natural language. Keep your description to single actions on websites (ex. click Search button)
-- **Recording**: Use the Chrome Extension to record your workflow using actions like clicks, scrolls, and data entry.
-- **Manual Editing**: Fine-tune workflows by customizing individual automation blocks in the builder. Blocks represent steps in the workflow.
-
----
-
-### 3. Test Your Web-Agent in the Builder
-
-Run your agent directly in the builder to ensure it works as expected. Debug issues, refine workflows, and verify that all actions execute correctly on the target website. There's a few way to test:
-
-- **Test Entire Workflow**: will run the workflow from start to finish.
-- **Test Workflow from a Specific Step**: hovering over an automation block and clicking the "Run" button above it, will run the workflow from that specific point.
-- **Test Only a Single Step**/*: once you click into an automation block, you can choose to run only that step from the expanded block view.
-
-<Warning>
-**Important:** if testing individual steps, or testing a workflow midway through, have your Google Chrome Browser open to the area of the website where that specific step starts.
-</Warning>
-
----
-
-### 4. Run Your Web-Agent in Two Ways
-
-- **On Your Personal Computer (Locally)**: Run the agent directly on your machine for quick, one-off workflows. While running locally, your computer will be occupied and unavailable for other tasks.
-
-- **In the Cloud *(Coming Soon)***: Deploy your agent to Bytespace's cloud infrastructure for 24/7 automation. Cloud execution uses virtual machines, residential proxies to bypass geo-restrictions, and tools to handle authentication and captchas seamlessly, freeing up your personal computer.
-
----
-
-### 5. Connect Web-Agents to Other Apps *(Coming Soon)*
-
-Integrate your web agents with other tools and platforms using the Bytespace API. This feature will allow you to:
-
-- Call agents from platforms like Zapier, Make, or your custom applications.
-- Extend workflows by combining Bytespace automation with existing tools.
-
----
-
-### Ready to Get Started?
-
-<CardGroup>
+<CardGroup cols={2}>
   <Card
-    title="Set Up Your Environment"
-    icon="wrench"
-    href="/platform-overview"
+    title="Join our Discord"
+    icon="discord"
+    href="https://discord.gg/bytespace"
   >
-    Install the Chrome Extension and sign in to your account.
+    Join our growing community of automation enthusiasts. Get help, share ideas, and connect with fellow builders.
   </Card>
+  
   <Card
-    title="Build Your First Agent"
-    icon="wand-magic-sparkles"
-    href="/tutorials"
+    title="Introduce Yourself"
+    icon="face-smile-beam"
+    href="https://discord.gg/bytespace"
   >
-    Follow our step-by-step guide to create a web agent.
+    Don't be a stranger! Share what you're working on and connect with Kar and Andre directly in our community.
   </Card>
-  <Card
-    title="Explore Templates"
-    icon="box-archive"
-    href="/templates"
-  >
-    Jumpstart your workflow with pre-built automations.
-  </Card>
-</CardGroup> 
+</CardGroup>
+
+### That's it!
+
+Once you've checked off everything here, you're ready for the next step: **Building your first Web-Agent**. Let's make automation work for you! 
+
+<div className="mt-8 scale-90 opacity-80">
+  ### Follow along for updates 🤙 <span className="text-sm text-gray-400">*(optional)*</span>
+
+  <CardGroup cols={3}>
+    <Card
+      title="Bytespace"
+      icon="square-x-twitter"
+      href="https://twitter.com/BytespaceAI"
+    />
+    
+    <Card
+      title="Kar (CEO)"
+      icon="square-x-twitter"
+      href="https://twitter.com/karanveerdhillon"
+    />
+    
+    <Card
+      title="Andre (CTO)"
+      icon="square-x-twitter"
+      href="https://twitter.com/andreharris"
+    />
+  </CardGroup>
+</div>

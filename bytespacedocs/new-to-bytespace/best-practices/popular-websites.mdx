@@ -1,0 +1,213 @@
+---
+title: "Automating Popular Websites"
+sidebarTitle: "Popular Websites"
+description: "Learn the nuances of automating popular websites and how to handle their anti-automation measures"
+---
+
+### Understanding Website Automation
+
+Different websites implement various measures to detect and prevent automation. Understanding these patterns helps create more reliable workflows.
+
+<Tabs>
+  <Tab title="LinkedIn">
+    ### LinkedIn Automation Patterns
+    
+    <Warning>
+    LinkedIn actively monitors for automated behavior. Always use human-like patterns and respect rate limits.
+    </Warning>
+
+    **Key Considerations:**
+    - Implements progressive rate limiting
+    - Monitors mouse movement patterns
+    - Tracks typing speed and patterns
+    - Detects rapid-fire actions
+    
+    **Best Practices:**
+    1. Add random delays between actions
+    2. Use natural scrolling patterns
+    3. Implement gradual ramp-up in activity
+    4. Vary message templates
+    
+    <Note>
+    LinkedIn's rate limits are session-based. Start with 50-100 actions per day and gradually increase over weeks.
+    </Note>
+  </Tab>
+  
+  <Tab title="Twitter">
+    ### Twitter Automation Patterns
+    
+    **Key Challenges:**
+    - Dynamic content loading
+    - Rate limiting by IP
+    - Multiple UI versions
+    - Frequent layout changes
+    
+    **Handling Approaches:**
+    1. Use stable selectors (data-testid attributes)
+    2. Implement scroll-wait patterns
+    3. Handle both mobile and desktop layouts
+    4. Monitor for UI version changes
+    
+    <Note>
+    Twitter's new UI versions often run in parallel. Your automation should handle multiple possible layouts.
+    </Note>
+  </Tab>
+  
+  <Tab title="Instagram">
+    ### Instagram Automation Patterns
+    
+    **Common Challenges:**
+    - Strict rate limiting
+    - Complex AJAX loading
+    - Mobile-first design
+    - Frequent session checks
+    
+    **Key Strategies:**
+    1. Respect cooling periods
+    2. Handle lazy-loaded content
+    3. Manage session cookies properly
+    4. Use mobile viewport settings
+    
+    <Warning>
+    Instagram has some of the strictest anti-automation measures. Start with very conservative action limits.
+    </Warning>
+  </Tab>
+  
+  <Tab title="YouTube">
+    ### YouTube Automation Patterns
+    
+    **Technical Considerations:**
+    - Dynamic video loading
+    - Infinite scroll implementation
+    - Multiple page layouts
+    - AJAX-heavy navigation
+    
+    **Automation Approaches:**
+    1. Wait for video player states
+    2. Handle dynamic content loading
+    3. Use stable video identifiers
+    4. Monitor bandwidth usage
+    
+    <Note>
+    YouTube's interface is highly dynamic. Always verify element presence before interactions.
+    </Note>
+  </Tab>
+  
+  <Tab title="Facebook">
+    ### Facebook Automation Patterns
+    
+    **Key Challenges:**
+    - Complex DOM structure
+    - Dynamic class names
+    - Multiple page versions
+    - Strict bot detection
+    
+    **Best Practices:**
+    1. Use aria-label selectors
+    2. Handle dynamic content updates
+    3. Implement smart waiting patterns
+    4. Monitor for security checkpoints
+    
+    <Warning>
+    Facebook frequently changes its DOM structure. Rely on semantic attributes rather than classes.
+    </Warning>
+  </Tab>
+  
+  <Tab title="Gmail">
+    ### Gmail Automation Patterns
+    
+    **Technical Aspects:**
+    - Single-page application
+    - Heavy JavaScript usage
+    - Multiple inbox views
+    - Security-focused design
+    
+    **Automation Strategies:**
+    1. Use Gmail-specific selectors
+    2. Handle different inbox layouts
+    3. Manage email threading properly
+    4. Account for label variations
+    
+    <Note>
+    Gmail's interface is highly customizable. Your automation should handle different inbox configurations.
+    </Note>
+  </Tab>
+</Tabs>
+
+### Universal Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Rate Limiting" icon="gauge">
+    - Start conservatively
+    - Gradually increase limits
+    - Monitor for blocks
+    - Implement cooling periods
+  </Card>
+  
+  <Card title="Detection Avoidance" icon="user-secret">
+    - Add random delays
+    - Use human-like patterns
+    - Vary action sequences
+    - Avoid perfect timing
+  </Card>
+  
+  <Card title="Error Handling" icon="shield">
+    - Handle network issues
+    - Detect security challenges
+    - Implement retry logic
+    - Log suspicious responses
+  </Card>
+  
+  <Card title="Session Management" icon="key">
+    - Handle cookie expiration
+    - Rotate user agents
+    - Manage multiple sessions
+    - Monitor login state
+  </Card>
+</CardGroup>
+
+### Common Anti-Automation Measures
+
+<Accordion title="Browser Fingerprinting">
+Websites track various browser characteristics to identify automation:
+- Canvas fingerprinting
+- WebGL fingerprinting
+- Font enumeration
+- Plugin detection
+
+**Solution:** Use Bytespace's built-in fingerprint randomization.
+</Accordion>
+
+<Accordion title="Behavioral Analysis">
+Monitoring of user patterns including:
+- Mouse movements
+- Typing patterns
+- Scroll behavior
+- Click patterns
+
+**Solution:** Implement human-like behavior patterns using Bytespace's natural interaction features.
+</Accordion>
+
+<Accordion title="Network Pattern Detection">
+Websites monitor:
+- Request timing
+- Request patterns
+- Header consistency
+- IP reputation
+
+**Solution:** Use smart delays and Bytespace's proxy management system.
+</Accordion>
+
+### Next Steps
+
+<Card
+  title="Understanding Terms of Service"
+  icon="book"
+  href="/bytespacedocs/new-to-bytespace/best-practices/respecting-tos"
+>
+  Learn about website Terms of Service and how to automate responsibly
+</Card>
+
+<Note>
+Remember: The key to successful automation is respecting each platform's limits and implementing human-like behavior patterns. Always review the platform's Terms of Service before implementing automation.
+</Note>

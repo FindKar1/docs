@@ -58,9 +58,9 @@
           "group": "Tools",
           "icon": "screwdriver-wrench",
           "pages": [
-            "bytespacedocs/new-to-bytespace/tools/Element-selector",
-            "bytespacedocs/new-to-bytespace/tools/Nodes",
-            "bytespacedocs/new-to-bytespace/tools/Enhance-selector",
+            "bytespacedocs/new-to-bytespace/tools/tools-overview",
+            "bytespacedocs/new-to-bytespace/tools/automation-blocks",
+            "bytespacedocs/new-to-bytespace/tools/element-selector",
             "bytespacedocs/new-to-bytespace/tools/AI-debugger",
             "bytespacedocs/new-to-bytespace/tools/Test-run",
             "bytespacedocs/new-to-bytespace/tools/Logs"
@@ -94,7 +94,10 @@
           "group": "Best Practices",
           "icon": "lightbulb",
           "pages": [
-              "bytespacedocs/new-to-bytespace/best-practices/linkedin-best-practices"
+            "bytespacedocs/new-to-bytespace/best-practices/element-selector",
+            "bytespacedocs/new-to-bytespace/best-practices/choosing-automation-blocks",
+            "bytespacedocs/new-to-bytespace/best-practices/popular-websites",
+            "bytespacedocs/new-to-bytespace/best-practices/respecting-tos"
           ]
         },
         {
@@ -114,47 +117,47 @@
     {
       "group": "Web Agent Builder",
       "pages": [
-        "bytespacedocs/overview",
+        "bytespacedocs/web-agent-builder/overview",
         {
           "group": "Navigation",
           "icon": "globe",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/open-page"
+            "bytespacedocs/web-agent-builder/navigation/open-page"
           ]
         },
         {
           "group": "Actions",
           "icon": "computer-mouse",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/click-element"
+            "bytespacedocs/web-agent-builder/actions/click-element"
           ]
         },
         {
           "group": "Loops & Conditions",
           "icon": "arrows-rotate",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/click-element"
+            "bytespacedocs/web-agent-builder/loops-and-conditions/click-element"
           ]
         },
         {
           "group": "AI Blocks",
           "icon": "wand-magic-sparkles",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/click-element"
+            "bytespacedocs/web-agent-builder/ai-blocks/click-element"
           ]
         },
         {
           "group": "Data Management",
           "icon": "database",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/click-element"
+            "bytespacedocs/web-agent-builder/data-management/click-element"
           ]
         },
         {
           "group": "Settings",
           "icon": "gear",
           "pages": [
-            "bytespacedocs/new-to-bytespace/start-here/click-element"
+            "bytespacedocs/web-agent-builder/settings/click-element"
           ]
         }
       ]
@@ -162,44 +165,30 @@
     {
       "group": "Resources",
       "pages": [
-        "bytespacedocs/release-notes",
-        "community",
-        "billing",
-        "FAQs",
-        "glossary"
+        "bytespacedocs/resources/release-notes",
+        "bytespacedocs/resources/community",
+        "bytespacedocs/resources/billing",
+        "bytespacedocs/resources/faqs",
+        "bytespacedocs/resources/glossary"
       ]
     },
     {
       "group": "Mintly",
       "pages": [
-        "bytespacedocs/introduction1",
-        "bytespacedocs/quickstart",
-        "bytespacedocs/development"
+        "mintlify/introduction1",
+        "mintlify/quickstart",
+        "mintlify/development"
       ]
     },
     {
       "group": "Essentials",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "mintlify/markdown",
+        "mintlify/code",
+        "mintlify/images",
+        "mintlify/settings",
+        "mintlify/navigation",
+        "mintlify/reusable-snippets"
       ]
     }
   ],
