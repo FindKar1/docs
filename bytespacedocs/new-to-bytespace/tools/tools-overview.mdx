@@ -1,50 +1,532 @@
 ---
 title: "Tools Overview"
-description: "Explore the tools available for building and managing your web automations"
+description: "Explore the tools available for building and managing your web automations. Below is a summary of what you can do with each tool. Click on any tool button to read more about it."
+
 ---
 
-Welcome to the Tools section, your central hub for building and managing your web automations. Each tool is designed to simplify and streamline your workflow. Below is a quick summary of what you can do with each tool. Click on any section to explore its full features and functionality in detail.
+<CardGroup cols={1} className="space-y-8">
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/Nodes" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(190, 72, 230, 0.1)', 
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(190, 72, 230, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(190, 72, 230, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(190, 72, 230, 0.5)'}>
+        <img 
+          src="/icons/workflow.svg" 
+          alt="Automation Blocks" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>1.</span>{" "}Automation Blocks
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Create and structure your automation workflows using modular building blocks. Each block represents an action or decision your agent will take, allowing you to design complex processes with ease and flexibility.
+      </div>
+    </div>
+  </div>
 
-<CardGroup cols={1}>
-  <Card
-    title="1. Element Selector"
-    icon="mouse-pointer"
-    href="/bytespacedocs/new-to-bytespace/tools/Element-selector"
-  >
-    Easily identify and target elements on any webpage to build reliable and dynamic workflows. Whether it's a button, form, or specific text, this tool helps you pinpoint exactly what your web-agent needs to interact with.
-  </Card>
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/Element" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(190, 72, 230, 0.1)', 
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(190, 72, 230, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(190, 72, 230, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(190, 72, 230, 0.5)'}>
+        <img 
+          src="/icons/pointer.svg" 
+          alt="Element Selector" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>2.</span>{" "}Element Selector
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Easily identify and target elements on any webpage to build reliable and dynamic workflows. Whether it's a button, form, or specific text, this tool helps you pinpoint exactly what your web-agent needs to interact with.
+      </div>
+    </div>
+  </div>
 
-  <Card
-    title="2. Automation Blocks"
-    icon="cubes"
-    href="/bytespacedocs/new-to-bytespace/tools/Nodes"
-  >
-    Create and structure your automation workflows using modular building blocks. Each block represents an action or decision your agent will take, allowing you to design complex processes with ease and flexibility.
-  </Card>
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/verify-selector" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(190, 72, 230, 0.1)', 
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(190, 72, 230, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(190, 72, 230, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(190, 72, 230, 0.5)'}>
+        <img 
+          src="/icons/monitor-check.svg" 
+          alt="Verify Selector" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>3.</span>{" "}Verify Selector
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Validate your selected elements to ensure they're correctly identified and will work reliably across different page states and scenarios. This tool helps prevent automation failures by confirming your selectors are robust.
+      </div>
+    </div>
+  </div>
 
-  <Card
-    title="3. Test Run"
-    icon="vial"
-    href="/bytespacedocs/new-to-bytespace/tools/Test-run"
-  >
-    Run a quick simulation of your automation to validate that everything works as expected. Catch errors and adjust your workflow before going live.
-  </Card>
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/web-agent-inputs" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(190, 72, 230, 0.1)', 
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(190, 72, 230, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(190, 72, 230, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(190, 72, 230, 0.5)'}>
+        <img 
+          src="/icons/file-input.svg" 
+          alt="Web Agent Inputs" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>4.</span>{" "}Web Agent Inputs
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Configure and customize your web agent's behavior by setting up input parameters. Define variables, conditions, and data sources that your automation will use during execution.
+      </div>
+    </div>
+  </div>
 
-  <Card
-    title="4. Run"
-    icon="play"
-    href="/bytespacedocs/new-to-bytespace/tools/Run"
-  >
-    Execute your automation in a live environment. This is where your web-agent brings your workflow to life, automating tasks seamlessly on your selected platform.
-  </Card>
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/edit-table-columns" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(190, 72, 230, 0.1)', 
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(190, 72, 230, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(190, 72, 230, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(190, 72, 230, 0.5)'}>
+        <img 
+          src="/icons/table-2.svg" 
+          alt="Edit Table Columns" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>5.</span>{" "}Edit Table Columns
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Customize how your data is displayed and organized in tables. Add, remove, or modify columns to focus on the information that matters most to your automation workflow.
+      </div>
+    </div>
+  </div>
 
-  <Card
-    title="5. Logs"
-    icon="list-check"
-    href="/bytespacedocs/new-to-bytespace/tools/Logs"
-  >
-    Monitor and debug your automation's performance in real time. The Logs tool provides detailed insights, tracking each action taken by your agent and highlighting any issues that need attention.
-  </Card>
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/enhance-ai" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(128, 128, 128, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(128, 128, 128, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(128, 128, 128, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(128, 128, 128, 0.5)'}>
+        <img 
+          src="/icons/sparkles.svg" 
+          alt="Enhance Selector w/AI" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>6.</span>{" "}Enhance Selector w/AI
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Leverage AI to optimize your automation workflows. Get intelligent suggestions for improving your selectors, handling edge cases, and making your automations more resilient and efficient.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/record-button" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(128, 128, 128, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(128, 128, 128, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(128, 128, 128, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(128, 128, 128, 0.5)'}>
+        <img 
+          src="/icons/disc.svg" 
+          alt="Record Workflow" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>7.</span>{" "}Record Workflow
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Capture web interactions automatically by recording your actions. Convert manual processes into automation workflows with just a click of the record button.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/test-block" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(128, 128, 128, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(128, 128, 128, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(128, 128, 128, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(128, 128, 128, 0.5)'}>
+        <img 
+          src="/icons/flask-conical.svg" 
+          alt="Test Step" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>8.</span>{" "}Test Step
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Test individual automation blocks in isolation to verify their functionality. Debug and refine specific actions without running the entire workflow, saving time during development.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/add-notes" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(128, 128, 128, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(128, 128, 128, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(128, 128, 128, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(128, 128, 128, 0.5)'}>
+        <img 
+          src="/icons/file-pen.svg" 
+          alt="Add Notes" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>9.</span>{" "}Add Notes
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Document your automation workflow with detailed notes. Add comments, explanations, and documentation to make your automation more maintainable and easier to understand.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/delay-inputs" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(128, 128, 128, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(128, 128, 128, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(128, 128, 128, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(128, 128, 128, 0.5)'}>
+        <img 
+          src="/icons/timer.svg" 
+          alt="Delay Action" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>10.</span>{" "}Delay Action
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Control the timing and pacing of your automation. Add strategic delays and wait conditions to ensure your automation runs at the right speed and handles timing-dependent tasks correctly.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/Run" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(100, 202, 232, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(100, 202, 232, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(100, 202, 232, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(100, 202, 232, 0.5)'}>
+        <img 
+          src="/icons/play.svg" 
+          alt="Run" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>11.</span>{" "}Run
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Execute your automation in a live environment. This is where your web-agent brings your workflow to life, automating tasks seamlessly on your selected platform.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/Logs" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(100, 202, 232, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(100, 202, 232, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(100, 202, 232, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(100, 202, 232, 0.5)'}>
+        <img 
+          src="/icons/history.svg" 
+          alt="Logs" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>12.</span>{" "}Logs
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Monitor and debug your automation's performance in real time. Track each action taken by your agent and identify any issues that need attention.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/share-workflow" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(100, 202, 232, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(100, 202, 232, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(100, 202, 232, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(100, 202, 232, 0.5)'}>
+        <img 
+          src="/icons/share-2.svg" 
+          alt="Share Workflow" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>13.</span>{" "}Share Workflow
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Collaborate with team members by sharing your automation workflows. Control access permissions and enable team collaboration on automation projects.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/notifications" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(236, 185, 61, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(236, 185, 61, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(236, 185, 61, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(236, 185, 61, 0.5)'}>
+        <img 
+          src="/icons/bell.svg" 
+          alt="Notifications" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>14.</span>{" "}Notifications
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Stay informed about your automation's status with customizable notifications. Get alerts for successful runs, errors, or specific conditions you want to monitor.
+      </div>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-5">
+    <a href="/bytespacedocs/new-to-bytespace/tools/deploy" className="no-underline block" style={{ minWidth: '75px' }}>
+      <div style={{ 
+        width: '75px', 
+        height: '75px', 
+        backgroundColor: 'rgba(102, 202, 145, 0.1)',
+        borderRadius: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 0 0 rgba(102, 202, 145, 0.5)',
+        transition: 'box-shadow 0.2s ease'
+      }}
+      onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px rgba(102, 202, 145, 0.5)'}
+      onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 0 0 0 rgba(102, 202, 145, 0.5)'}>
+        <img 
+          src="/icons/rocket.svg" 
+          alt="Deploy" 
+          style={{ 
+            width: '35px',
+            height: '35px'
+          }}
+        />
+      </div>
+    </a>
+    <div>
+      <div className="font-semibold text-base mb-1 text-black dark:text-white">
+        <span>15.</span>{" "}Deploy
+      </div>
+      <div className="text-sm text-[#666666] dark:text-[#666666]">
+        Push your automation workflow to production. Set up scheduling, triggers, and deployment configurations to run your automation when and where you need it.
+      </div>
+    </div>
+  </div>
 </CardGroup>
-
-Explore each section to harness the full power of the Tools available to you. Ready to build something amazing? Let's get started!

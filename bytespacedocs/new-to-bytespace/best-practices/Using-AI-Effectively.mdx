@@ -1,0 +1,228 @@
+---
+title: "Using AI Effectively"
+description: "Learn how to leverage Bytespace's AI capabilities for smarter, more reliable automations"
+---
+
+### Understanding AI Capabilities
+
+<CardGroup cols={2}>
+  <Card title="Element Recognition" icon="eye">
+    - Smart element detection
+    - Dynamic content analysis
+    - Visual pattern matching
+    - Layout understanding
+  </Card>
+  
+  <Card title="Decision Making" icon="brain">
+    - Adaptive workflows
+    - Content classification
+    - Error prediction
+    - Pattern recognition
+  </Card>
+</CardGroup>
+
+### AI-Enhanced Element Selection
+
+<Tabs>
+  <Tab title="Smart Selection">
+    ```javascript
+    // Example: AI-powered element selection
+    const element = await page.smartSelect({
+      context: 'login form',
+      action: 'submit button',
+      fallback: '#login-submit'
+    });
+    ```
+    
+    <Note>
+    Smart Selection uses context understanding to find elements even when traditional selectors fail.
+    </Note>
+  </Tab>
+  
+  <Tab title="Visual Recognition">
+    ```javascript
+    // Example: Visual element detection
+    const searchBox = await page.findByVisual({
+      type: 'search input',
+      nearText: 'Search products',
+      confidence: 0.9
+    });
+    ```
+  </Tab>
+</Tabs>
+
+### Content Understanding
+
+<Steps>
+  1. **Text Analysis**
+     - Natural language processing
+     - Sentiment analysis
+     - Content categorization
+     - Intent recognition
+  
+  2. **Visual Analysis**
+     - Image recognition
+     - Layout analysis
+     - UI pattern detection
+     - State recognition
+  
+  3. **Pattern Learning**
+     - User behavior patterns
+     - Website structure
+     - Error patterns
+     - Success indicators
+</Steps>
+
+### Adaptive Workflows
+
+<Accordion title="Dynamic Decision Making">
+```javascript
+// Example: AI-driven workflow adaptation
+const response = await page.analyzeState({
+  elements: ['login-form', 'error-message', 'captcha'],
+  context: 'authentication',
+  history: previousActions
+});
+
+if (response.needsHumanIntervention) {
+  await handleManualStep();
+} else {
+  await executeAutomatedPath(response.recommendedAction);
+}
+```
+</Accordion>
+
+### Error Prevention
+
+<CardGroup cols={2}>
+  <Card title="Predictive Analysis" icon="chart-line">
+    - Detect potential failures
+    - Identify risky patterns
+    - Suggest optimizations
+    - Monitor success rates
+  </Card>
+  
+  <Card title="Smart Recovery" icon="arrows-rotate">
+    - Adaptive retry logic
+    - Alternative paths
+    - Self-healing workflows
+    - Learning from failures
+  </Card>
+</CardGroup>
+
+### Natural Interaction Patterns
+
+<Steps>
+  1. **Human-Like Behavior**
+     ```javascript
+     // Example: Natural interaction timing
+     await page.naturalInteraction({
+       action: 'click',
+       element: loginButton,
+       behavior: 'human-like',
+       variability: 'medium'
+     });
+     ```
+  
+  2. **Contextual Awareness**
+     - Understanding page state
+     - Recognizing UI patterns
+     - Adapting to changes
+     - Learning from success
+  
+  3. **Pattern Variation**
+     - Randomized delays
+     - Natural mouse movements
+     - Typing patterns
+     - Scroll behavior
+</Steps>
+
+### AI Training & Optimization
+
+<CardGroup cols={2}>
+  <Card title="Model Training" icon="dumbbell">
+    - Feed success patterns
+    - Report failures
+    - Provide feedback
+    - Share contexts
+  </Card>
+  
+  <Card title="Performance Tuning" icon="sliders">
+    - Adjust confidence levels
+    - Fine-tune timing
+    - Optimize recognition
+    - Balance reliability
+  </Card>
+</CardGroup>
+
+### Best Practices
+
+<Warning>
+Key Considerations:
+- Start with high confidence thresholds
+- Monitor AI decisions
+- Maintain fallback options
+- Regular performance review
+</Warning>
+
+### Common Use Cases
+
+1. **Form Filling**
+   - Smart field recognition
+   - Content validation
+   - Error prevention
+   - Format adaptation
+
+2. **Data Extraction**
+   - Content classification
+   - Structure recognition
+   - Format detection
+   - Quality validation
+
+3. **Navigation**
+   - Path optimization
+   - State awareness
+   - Error avoidance
+   - Dynamic routing
+
+### Advanced Features
+
+<Accordion title="AI Debugging">
+```javascript
+// Example: AI-assisted debugging
+const diagnosis = await workflow.analyzeFailure({
+  error: lastError,
+  context: executionContext,
+  history: actionHistory
+});
+
+console.log('Root Cause:', diagnosis.rootCause);
+console.log('Suggested Fix:', diagnosis.recommendation);
+```
+</Accordion>
+
+<Tip>
+Use AI debugging features to understand complex failures and improve your automation reliability over time.
+</Tip>
+
+### Performance Monitoring
+
+<CardGroup cols={2}>
+  <Card title="Success Metrics" icon="chart-simple">
+    - Recognition accuracy
+    - Decision quality
+    - Recovery rate
+    - Optimization impact
+  </Card>
+  
+  <Card title="Learning Progress" icon="graduation-cap">
+    - Pattern acquisition
+    - Error reduction
+    - Adaptation speed
+    - Context understanding
+  </Card>
+</CardGroup>
+
+<Note>
+Remember: AI capabilities improve with usage. Regular feedback and monitoring help enhance the system's effectiveness for your specific use cases.
+</Note> 
