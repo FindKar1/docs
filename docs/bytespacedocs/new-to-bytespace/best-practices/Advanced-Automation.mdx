@@ -1,0 +1,229 @@
+---
+title: "Advanced Automation"
+description: "Master complex automation scenarios including JavaScript-heavy sites, AI integration, and advanced web interaction patterns"
+---
+
+### Handling JavaScript-Heavy Websites
+
+<CardGroup cols={2}>
+  <Card title="Dynamic Content" icon="code">
+    - Single Page Applications (SPAs)
+    - Lazy-loaded elements
+    - AJAX requests
+    - WebSocket connections
+  </Card>
+  
+  <Card title="State Management" icon="database">
+    - React/Vue/Angular states
+    - Client-side routing
+    - Local storage
+    - Session handling
+  </Card>
+</CardGroup>
+
+### Shadow DOM Handling
+
+<Tabs>
+  <Tab title="Detection">
+    ```javascript
+    // Check for Shadow DOM
+    const hasShadowRoot = element.shadowRoot !== null;
+    
+    // Access Shadow DOM content
+    const shadowContent = element.shadowRoot.querySelector('.inner-element');
+    ```
+  </Tab>
+  
+  <Tab title="Interaction">
+    ```javascript
+    // Wait for Shadow DOM element
+    await page.waitForFunction(() => {
+      const host = document.querySelector('#shadow-host');
+      return host?.shadowRoot?.querySelector('.target-element');
+    });
+    ```
+  </Tab>
+</Tabs>
+
+### AI-Enhanced Automation
+
+#### Leveraging AI Models
+
+<Steps>
+  1. **Content Analysis**
+     - Text classification
+     - Image recognition
+     - Pattern detection
+     - Sentiment analysis
+  
+  2. **Decision Making**
+     - Dynamic path selection
+     - Error recovery
+     - Content validation
+     - Action optimization
+  
+  3. **Data Processing**
+     - Natural language processing
+     - Data extraction
+     - Format conversion
+     - Validation rules
+</Steps>
+
+### Advanced Interaction Patterns
+
+<Accordion title="Complex User Actions">
+```javascript
+// Multi-step drag and drop
+await page.hover('.draggable');
+await page.mouse.down();
+await page.mouse.move(x, y, { steps: 10 });
+await page.mouse.up();
+
+// Complex keyboard shortcuts
+await page.keyboard.down('Control');
+await page.keyboard.press('A');
+await page.keyboard.up('Control');
+```
+</Accordion>
+
+<Accordion title="Frame Management">
+```javascript
+// Handle multiple frames
+const frames = await page.frames();
+const targetFrame = frames.find(f => 
+  f.url().includes('target-frame')
+);
+
+await targetFrame.click('.button-in-frame');
+```
+</Accordion>
+
+### Scraping vs. Interaction
+
+<CardGroup cols={2}>
+  <Card title="Scraping Techniques" icon="download">
+    - Batch processing
+    - Data normalization
+    - Rate management
+    - Format handling
+  </Card>
+  
+  <Card title="Interactive Automation" icon="hand-pointer">
+    - Event simulation
+    - State management
+    - Session handling
+    - Response validation
+  </Card>
+</CardGroup>
+
+### Advanced Network Handling
+
+<Steps>
+  1. **Request Interception**
+     ```javascript
+     // Modify requests on the fly
+     await page.setRequestInterception(true);
+     page.on('request', request => {
+       if (request.resourceType() === 'image') {
+         request.abort();
+       } else {
+         request.continue();
+       }
+     });
+     ```
+  
+  2. **Response Manipulation**
+     ```javascript
+     // Handle and modify responses
+     page.on('response', response => {
+       if (response.url().includes('api')) {
+         const data = response.json();
+         // Process API response
+       }
+     });
+     ```
+  
+  3. **WebSocket Handling**
+     ```javascript
+     // Monitor WebSocket traffic
+     page.on('websocket', ws => {
+       ws.on('framesent', frame => 
+         console.log('Frame sent:', frame.payload)
+       );
+     });
+     ```
+</Steps>
+
+### Performance Optimization
+
+<CardGroup cols={2}>
+  <Card title="Resource Management" icon="server">
+    - Memory optimization
+    - Connection pooling
+    - Cache management
+    - Thread handling
+  </Card>
+  
+  <Card title="Parallel Processing" icon="network-wired">
+    - Worker threads
+    - Task distribution
+    - Load balancing
+    - Resource sharing
+  </Card>
+</CardGroup>
+
+### Error Recovery Strategies
+
+<Warning>
+Advanced automations require robust error handling:
+- Circuit breaker patterns
+- Fallback mechanisms
+- State recovery
+- Transaction management
+</Warning>
+
+### Best Practices
+
+1. **Code Organization**
+   - Modular structure
+   - Reusable components
+   - Clear documentation
+   - Version control
+
+2. **Testing Strategy**
+   - Unit tests
+   - Integration tests
+   - Performance testing
+   - Error simulation
+
+3. **Monitoring**
+   - Performance metrics
+   - Error tracking
+   - Resource usage
+   - Success rates
+
+<Tip>
+Always test complex automations in a controlled environment before deploying to production. Use Bytespace's testing features to validate your advanced workflows.
+</Tip>
+
+### Security Considerations
+
+<CardGroup cols={2}>
+  <Card title="Data Protection" icon="shield-halved">
+    - Encryption
+    - Secure storage
+    - Access control
+    - Audit logging
+  </Card>
+  
+  <Card title="Compliance" icon="check-double">
+    - Legal requirements
+    - Rate limiting
+    - Data handling
+    - Usage policies
+  </Card>
+</CardGroup>
+
+<Note>
+Remember: Advanced automation capabilities come with increased responsibility. Always ensure your automations respect website terms of service and user privacy.
+</Note> 

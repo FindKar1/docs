@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "# Hello World",
+  "main": "index.js",
+  "scripts": {
+    "dev": "mintlify dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mintlify/cli": "^4.0.323",
+    "lucide-react": "^0.475.0"
+  }
+}

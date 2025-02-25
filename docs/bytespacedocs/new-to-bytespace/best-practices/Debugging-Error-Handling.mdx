@@ -1,0 +1,229 @@
+---
+title: "Debugging & Error Handling"
+description: "Master the art of debugging automations and implementing robust error handling strategies"
+---
+
+### Understanding Error Types
+
+<Tabs>
+  <Tab title="Common Errors">
+    1. **Element Not Found**
+       - Selector issues
+       - Timing problems
+       - Dynamic content changes
+    
+    2. **Network Errors**
+       - Connection timeouts
+       - API failures
+       - Rate limiting
+    
+    3. **State Errors**
+       - Invalid element states
+       - Unexpected conditions
+       - Session expiration
+  </Tab>
+  
+  <Tab title="Error Messages">
+    ```javascript
+    // Common error patterns
+    "Element not found: #login-button"
+    "Timeout waiting for selector: .menu-item"
+    "Network request failed: 429 Too Many Requests"
+    "Invalid element state: Element is not clickable"
+    ```
+    
+    <Note>
+    Always log the full error message and stack trace for better debugging.
+    </Note>
+  </Tab>
+</Tabs>
+
+### Reading Error Logs
+
+<Steps>
+  1. **Identify Error Type**
+     - Check error classification
+     - Review error message
+     - Examine stack trace
+  
+  2. **Analyze Context**
+     - Check page state
+     - Review network activity
+     - Examine element status
+  
+  3. **Review Workflow State**
+     - Check variables
+     - Verify data flow
+     - Review previous actions
+</Steps>
+
+### Handling Timeouts
+
+<CardGroup cols={2}>
+  <Card title="Smart Waiting" icon="clock">
+    ```javascript
+    // Good Practice
+    await page.waitForSelector('.element', {
+      visible: true,
+      timeout: 5000
+    });
+    ```
+  </Card>
+  
+  <Card title="Retry Logic" icon="rotate">
+    ```javascript
+    // Implement retries
+    const maxRetries = 3;
+    let attempts = 0;
+    while (attempts < maxRetries) {
+      try {
+        // action
+        break;
+      } catch (e) {
+        attempts++;
+        await delay(1000);
+      }
+    }
+    ```
+  </Card>
+</CardGroup>
+
+### Implementing Error Recovery
+
+<Accordion title="Basic Recovery Pattern">
+```javascript
+try {
+  // Primary action
+} catch (error) {
+  if (error.type === 'ElementNotFound') {
+    // Try alternative selector
+  } else if (error.type === 'NetworkError') {
+    // Implement retry with backoff
+  } else {
+    // Log and handle unknown errors
+  }
+}
+```
+</Accordion>
+
+<Accordion title="Advanced Recovery Strategies">
+```javascript
+// Progressive retry with backoff
+async function retryWithBackoff(action, maxAttempts = 3) {
+  for (let i = 0; i < maxAttempts; i++) {
+    try {
+      return await action();
+    } catch (error) {
+      if (i === maxAttempts - 1) throw error;
+      await delay(Math.pow(2, i) * 1000);
+    }
+  }
+}
+```
+</Accordion>
+
+### Debugging Process
+
+<Steps>
+  1. **Reproduce the Issue**
+     - Use test environment
+     - Replicate conditions
+     - Document steps
+  
+  2. **Isolate the Problem**
+     - Break down workflow
+     - Test components
+     - Check dependencies
+  
+  3. **Analyze Root Cause**
+     - Review error patterns
+     - Check timing issues
+     - Verify data flow
+  
+  4. **Implement Fix**
+     - Apply solution
+     - Test thoroughly
+     - Document changes
+</Steps>
+
+### Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Logging Strategy" icon="file-lines">
+    - Log important events
+    - Include context
+    - Use log levels
+    - Maintain history
+  </Card>
+  
+  <Card title="Error Prevention" icon="shield">
+    - Validate inputs
+    - Check preconditions
+    - Handle edge cases
+    - Monitor state
+  </Card>
+  
+  <Card title="Recovery Plans" icon="arrows-rotate">
+    - Define fallbacks
+    - Implement retries
+    - Handle cleanup
+    - Maintain state
+  </Card>
+  
+  <Card title="Monitoring" icon="chart-line">
+    - Track success rates
+    - Monitor performance
+    - Alert on failures
+    - Analyze patterns
+  </Card>
+</CardGroup>
+
+### Common Pitfalls
+
+<Warning>
+Avoid these common debugging mistakes:
+- Ignoring intermittent failures
+- Using fixed delays
+- Missing error logging
+- Incomplete error handling
+</Warning>
+
+### Testing Error Handlers
+
+1. **Simulate Errors**
+   - Network failures
+   - Element changes
+   - Timeout conditions
+   - State violations
+
+2. **Verify Recovery**
+   - Check retry behavior
+   - Validate state after recovery
+   - Test cleanup procedures
+   - Monitor resource usage
+
+<Tip>
+Always test your error handling in a controlled environment before deploying to production. Use Bytespace's test environment to simulate various failure scenarios.
+</Tip>
+
+### Advanced Debugging Tools
+
+<CardGroup cols={2}>
+  <Card title="Network Monitor" icon="wifi">
+    - Track requests
+    - Analyze responses
+    - Monitor latency
+    - Check headers
+  </Card>
+  
+  <Card title="State Inspector" icon="magnifying-glass">
+    - View variables
+    - Check element state
+    - Monitor DOM changes
+    - Track workflow progress
+  </Card>
+</CardGroup>
+
+<Note>
+Remember: Good error handling is about both preventing errors and recovering gracefully when they occur. Regular monitoring and maintenance are key to maintaining reliable automations.
+</Note> 

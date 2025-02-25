@@ -1,0 +1,233 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Starter Kit",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#BE48E6",
+    "light": "#BE48E6",
+    "dark": "#BE48E6",
+    "anchors": {
+      "from": "#9024B5",
+      "to": "#BE48E6"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "team@bytespace.ai"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://www.bytespace.ai/dashboard"
+  },
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    }
+  ],
+  "anchors": [
+  ],
+  "navigation": [
+    {
+      "group": "Docs",
+      "pages": [
+        "bytespacedocs/welcome"
+      ]
+    },
+    {
+      "group": "New to Bytespace?",
+      "pages": [
+        {
+          "group": "Start here",
+          "icon": "font-awesome",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/start-here/install-bytespace",
+            "bytespacedocs/new-to-bytespace/start-here/build-web-agent",
+            "bytespacedocs/new-to-bytespace/start-here/test-workflow",
+            "bytespacedocs/new-to-bytespace/start-here/run-and-schedule",
+            "bytespacedocs/new-to-bytespace/start-here/deploy"
+          ]
+        },
+        {
+          "group": "Tools",
+          "icon": "screwdriver-wrench",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/tools/tools-overview",
+            "bytespacedocs/new-to-bytespace/tools/automation-blocks",
+            "bytespacedocs/new-to-bytespace/tools/element-selector",
+            "bytespacedocs/new-to-bytespace/tools/verify-selector",
+            "bytespacedocs/new-to-bytespace/tools/web-agent-inputs",
+            "bytespacedocs/new-to-bytespace/tools/edit-table-columns",
+            "bytespacedocs/new-to-bytespace/tools/enhance-ai",
+            "bytespacedocs/new-to-bytespace/tools/record-workflow",
+            "bytespacedocs/new-to-bytespace/tools/test-step",
+            "bytespacedocs/new-to-bytespace/tools/add-notes",
+            "bytespacedocs/new-to-bytespace/tools/delay-action",
+            "bytespacedocs/new-to-bytespace/tools/run",
+            "bytespacedocs/new-to-bytespace/tools/logs",
+            "bytespacedocs/new-to-bytespace/tools/share-workflow",
+            "bytespacedocs/new-to-bytespace/tools/notifications",
+            "bytespacedocs/new-to-bytespace/tools/deploy"
+          ]
+        },
+        {
+          "group": "Tutorials",
+          "icon": "tv",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/tutorials/linkedin-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/twitter-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/instagram-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/youtube-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/facebook-tutorial",
+            "bytespacedocs/new-to-bytespace/tutorials/gmail-tutorial"
+          ]
+        },
+        {
+          "group": "Templates",
+          "icon": "share-nodes",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/templates/linkedin-template",
+            "bytespacedocs/new-to-bytespace/templates/twitter-template",
+            "bytespacedocs/new-to-bytespace/templates/instagram-template",
+            "bytespacedocs/new-to-bytespace/templates/youtube-template",
+            "bytespacedocs/new-to-bytespace/templates/facebook-template",
+            "bytespacedocs/new-to-bytespace/templates/gmail-template"
+          ]
+        },
+        {
+          "group": "Best Practices",
+          "icon": "lightbulb",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/best-practices/Overview",
+            "bytespacedocs/new-to-bytespace/best-practices/Choosing-Automation-Blocks",
+            "bytespacedocs/new-to-bytespace/best-practices/Selecting-Web-Elements",
+            "bytespacedocs/new-to-bytespace/best-practices/Avoiding-Account-Blocks",
+            "bytespacedocs/new-to-bytespace/best-practices/Debugging-Error-Handling",
+            "bytespacedocs/new-to-bytespace/best-practices/Performance-Optimization",
+            "bytespacedocs/new-to-bytespace/best-practices/Handling-Authentication",
+            "bytespacedocs/new-to-bytespace/best-practices/Advanced-Automation",
+            "bytespacedocs/new-to-bytespace/best-practices/Security-Compliance",
+            "bytespacedocs/new-to-bytespace/best-practices/Using-AI-Effectively",
+            "bytespacedocs/new-to-bytespace/best-practices/Popular-Websites",
+            "bytespacedocs/new-to-bytespace/best-practices/Respecting-TOS"
+          ]
+        },
+        {
+          "group": "Troubleshooting",
+          "icon": "triangle-exclamation",
+          "pages": [
+            "bytespacedocs/new-to-bytespace/troubleshooting/Element-selector",
+            "bytespacedocs/new-to-bytespace/troubleshooting/nodes",
+            "bytespacedocs/new-to-bytespace/troubleshooting/enhance-selector",
+            "bytespacedocs/new-to-bytespace/troubleshooting/ai-debugger",
+            "bytespacedocs/new-to-bytespace/troubleshooting/test-run",
+            "bytespacedocs/new-to-bytespace/troubleshooting/logs"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Web Agent Builder",
+      "pages": [
+        "bytespacedocs/web-agent-builder/overview",
+        {
+          "group": "Navigation",
+          "icon": "globe",
+          "pages": [
+            "bytespacedocs/web-agent-builder/navigation/New-Tab",
+            "bytespacedocs/web-agent-builder/navigation/Active-Tab",
+            "bytespacedocs/web-agent-builder/navigation/Switch-Tab",
+            "bytespacedocs/web-agent-builder/navigation/Go-Back",
+            "bytespacedocs/web-agent-builder/navigation/Go-Forward",
+            "bytespacedocs/web-agent-builder/navigation/Close-Tab",
+            "bytespacedocs/web-agent-builder/navigation/Take-Screenshot",
+            "bytespacedocs/web-agent-builder/navigation/Handle-Download",
+            "bytespacedocs/web-agent-builder/navigation/Reload-Tab",
+            "bytespacedocs/web-agent-builder/navigation/Get-Tab-URL",
+            "bytespacedocs/web-agent-builder/navigation/Delay",
+            "bytespacedocs/web-agent-builder/navigation/Export-Data",
+            "bytespacedocs/web-agent-builder/navigation/Clipboard"
+          ]
+        },
+        {
+          "group": "Actions",
+          "icon": "computer-mouse",
+          "pages": [
+            "bytespacedocs/web-agent-builder/actions/Click-Element",
+            "bytespacedocs/web-agent-builder/actions/Get-Text",
+            "bytespacedocs/web-agent-builder/actions/Scroll-Element",
+            "bytespacedocs/web-agent-builder/actions/Forms",
+            "bytespacedocs/web-agent-builder/actions/Link",
+            "bytespacedocs/web-agent-builder/actions/Attribute-Value",
+            "bytespacedocs/web-agent-builder/actions/JavaScript-Code",
+            "bytespacedocs/web-agent-builder/actions/Trigger-Event",
+            "bytespacedocs/web-agent-builder/actions/Upload-File",
+            "bytespacedocs/web-agent-builder/actions/Hover-Element",
+            "bytespacedocs/web-agent-builder/actions/Save-Assets",
+            "bytespacedocs/web-agent-builder/actions/Press-Key",
+            "bytespacedocs/web-agent-builder/actions/Create-Element"
+          ]
+        },
+        {
+          "group": "Loops & Conditions",
+          "icon": "arrows-rotate",
+          "pages": [
+            "bytespacedocs/web-agent-builder/loops-and-conditions/Repeat-Task",
+            "bytespacedocs/web-agent-builder/loops-and-conditions/Conditions",
+            "bytespacedocs/web-agent-builder/loops-and-conditions/Element-Exists",
+            "bytespacedocs/web-agent-builder/loops-and-conditions/Loop-Data",
+            "bytespacedocs/web-agent-builder/loops-and-conditions/Loop-Elements",
+            "bytespacedocs/web-agent-builder/loops-and-conditions/Loop-Breakpoint"
+          ]
+        },
+        {
+          "group": "AI Blocks",
+          "icon": "wand-magic-sparkles",
+          "pages": [
+            "bytespacedocs/web-agent-builder/ai-blocks/AI-Block"
+          ]
+        },
+        {
+          "group": "Data Management",
+          "icon": "database",
+          "pages": [
+            "bytespacedocs/web-agent-builder/data-management/Insert-Data",
+            "bytespacedocs/web-agent-builder/data-management/Delete-Data",
+            "bytespacedocs/web-agent-builder/data-management/Slice-Variable",
+            "bytespacedocs/web-agent-builder/data-management/Increase-Variable",
+            "bytespacedocs/web-agent-builder/data-management/RegEX-Variable",
+            "bytespacedocs/web-agent-builder/data-management/Sort-Data"
+          ]
+        },
+        {
+          "group": "Settings",
+          "icon": "gear",
+          "pages": [
+            "bytespacedocs/web-agent-builder/settings/click-element"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "bytespacedocs/resources/release-notes",
+        "bytespacedocs/resources/community",
+        "bytespacedocs/resources/billing",
+        "bytespacedocs/resources/faqs",
+        "bytespacedocs/resources/glossary"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "x": "https://x.com/BytespaceAI",
+    "youtube": "https://www.youtube.com/@bytespace-ai",
+    "linkedin": "https://www.linkedin.com/company/bytespace-ai/?viewAsMember=true"
+  }
+}
