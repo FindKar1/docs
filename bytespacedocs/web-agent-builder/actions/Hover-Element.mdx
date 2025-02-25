@@ -1,7 +1,53 @@
 ---
 title: "Hover Element"
-description: "Simulate mouse hover interactions"
+description: "Simulate mouse hover interactions on webpage elements. Use this action to trigger tooltips, reveal dropdown menus, and interact with hover-based UI components."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and re-find the element if needed.
+
+<Note type="success">
+  **Good Example:** `"Hover over the profile icon to reveal the dropdown menu."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Move the mouse around until something appears."`
+  
+  **Why it's bad?** Too vague, lacks specificity about which element to hover over.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the element to be hovered over using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario: Revealing a dropdown menu">
+  ### ✅ Good Prompt:
+  *"Hover over the profile icon to reveal the dropdown menu."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `.profile-icon`
+  </Card>
+
+  <Card>
+    XPath: `//div[@class='profile-icon']`
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the hover action if needed.
+  - Ensure the selector uniquely identifies the element to avoid unintended interactions.
+  - Some hover effects might require additional time before the UI updates—consider adding a wait time if necessary.
+</Warning> 

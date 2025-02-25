@@ -1,7 +1,65 @@
 ---
 title: "Upload File"
-description: "Handle file upload operations"
+description: "Upload files to webpage input fields. Use this action to handle file uploads in forms, submit documents, or process media uploads in your automation workflow."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and re-locate the element if needed.
+
+<Note type="success">
+  **Good Example:** `"Upload the user's profile picture to the file input field."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Make sure a file gets uploaded somewhere in the form."`
+  
+  **Why it's bad?** Too vague, lacks specificity about which file and which input field to use.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the file input field where the file should be uploaded using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+### ☐ File Reference *(Required)*
+<Card>
+  The file to be uploaded must be referenced from the workflow:
+  - Can be a static file path
+  - Can be a dynamic reference based on workflow data
+  - Must be accessible by the automation
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Uploading a profile picture">
+  ### ✅ Good Prompt:
+  *"Upload the user's profile picture to the file input field."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `input[type="file"]`
+  </Card>
+
+  <Card>
+    XPath: `//input[@type='file']`
+  </Card>
+
+  ### ✅ File Configuration:
+  - **File Reference:** `{{ profile_picture_path }}`
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the file upload if needed.
+  - The file input element must be an actual `<input type="file">` element.
+  - Some custom upload buttons may require additional event triggering.
+  - Ensure the referenced file path is valid and accessible by the automation.
+</Warning> 

@@ -1,7 +1,65 @@
 ---
 title: "Trigger Event"
-description: "Trigger browser and custom events"
+description: "Fire browser and custom events on webpage elements. Use this action to simulate user interactions, trigger JavaScript listeners, and interact with dynamic UI components."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and re-trigger the event if needed.
+
+<Note type="success">
+  **Good Example:** `"Trigger a 'change' event on the dropdown menu to apply the selected option."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Make sure the dropdown works by doing whatever is needed to activate it."`
+  
+  **Why it's bad?** Too vague, lacks specificity about the event and the target element.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the element where the event should be triggered using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+### ☐ Event Type *(Required)*
+<Card>
+  Choose from standard browser events:
+  - Mouse Events: `click`, `dblclick`, `mousedown`, `mouseup`, `mouseenter`, `mouseleave`
+  - Form Events: `focus`, `blur`, `change`, `input`, `submit`
+  - Keyboard Events: `keydown`, `keyup`
+  - Custom Events: Supported by the webpage
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Simulating a dropdown selection change">
+  ### ✅ Good Prompt:
+  *"Trigger a 'change' event on the dropdown menu to apply the selected option."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `select#country-dropdown`
+  </Card>
+
+  <Card>
+    XPath: `//select[@id='country-dropdown']`
+  </Card>
+
+  ### ✅ Event Configuration:
+  - **Event Type:** `change`
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the event trigger if needed.
+  - Ensure the selected event matches the expected behavior of the element (e.g., use `change` for dropdowns, `click` for buttons).
+  - Some events might require additional scripting if the website relies on JavaScript listeners that do not respond to synthetic events.
+</Warning> 

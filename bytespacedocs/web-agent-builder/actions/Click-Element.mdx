@@ -1,7 +1,53 @@
 ---
 title: "Click Element"
-description: "Learn how to simulate mouse clicks on web elements"
+description: "Simulate a user clicking on a specific element within a webpage. Use this action to navigate through pages, trigger buttons, open dropdowns, and interact with dynamic elements."
 ---
 
-### Overview
-Documentation coming soon...
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction that describes what this step should do. This is crucial for AI to debug and re-find the element if the website structure changes.
+
+<Note type="success">
+  **Good Example:** `"Click the 'Submit' button to submit the form."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Find and interact with the button on the page that might be used for submitting some kind of form. Make sure to click it only if it's visible and seems relevant."`
+  
+  **Why it's bad?** Too verbose, unclear about the exact action, and doesn't specify which button to click.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the element to be clicked using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario: Clicking a 'Submit' button on a form">
+  ### ✅ Good Prompt:
+  *"Click the 'Submit' button to submit the form."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `button[type="submit"]`
+  </Card>
+
+  <Card>
+    XPath: `//button[@type='submit']`
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required because it helps the AI debug and adjust the selector if the webpage structure changes.
+  - Ensure the selector uniquely identifies the element to prevent unintended interactions.
+  - If the page content is dynamic, consider using a robust selector or referencing workflow data.
+</Warning> 

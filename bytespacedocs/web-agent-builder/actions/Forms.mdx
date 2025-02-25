@@ -1,7 +1,75 @@
 ---
 title: "Forms"
-description: "Interact with and manipulate form elements"
+description: "Input text into form fields on a webpage. Use this action to fill out login forms, search bars, sign-up fields, and any other text inputs."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction that describes what this step should do. This helps the AI debug and re-find the element if the webpage structure changes.
+
+<Note type="success">
+  **Good Example:** `"Type the user's email into the email input field."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Find the correct box where the email goes and type something into it, making sure it works."`
+  
+  **Why it's bad?** Too vague, lacks specificity about the action and the expected input.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the input field where text should be entered using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+### ☐ Input Text *(Required)*
+<Card>
+  The actual text to be typed into the input field. This can be:
+  - A static value
+  - A reference to a workflow variable
+</Card>
+
+### ☐ Typing Delay *(Optional)*
+<Card>
+  Controls the speed of typing simulation to mimic human-like behavior.
+  - Default: `100` milliseconds
+  - Lower values (e.g., `50ms`) speed up typing
+  - Higher values (e.g., `200ms`) slow it down
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Entering an email into a login form">
+  ### ✅ Good Prompt:
+  *"Type the user's email into the email input field."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `input[type="email"]`
+  </Card>
+
+  <Card>
+    XPath: `//input[@type='email']`
+  </Card>
+
+  ### ✅ Good Input Values:
+  - Static Value: `"user@example.com"`
+  - Variable Reference: `{{ user_email }}`
+
+  ### ✅ Good Typing Delay:
+  - `100` milliseconds (default)
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the selector if needed.
+  - Ensure the selector uniquely identifies the target input field to avoid unintended interactions.
+  - Using a realistic typing delay can help avoid bot detection mechanisms on some websites.
+</Warning> 

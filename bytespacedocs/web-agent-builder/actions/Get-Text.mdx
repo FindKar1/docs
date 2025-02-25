@@ -1,7 +1,65 @@
 ---
 title: "Get Text"
-description: "Extract text content from web elements"
+description: "Extract text from a specific element on a webpage. Use this action to retrieve information such as product prices, article titles, user-generated content, and other on-page text."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction that describes what this step should do. This is essential for AI to debug and re-find the element if the webpage structure changes.
+
+<Note type="success">
+  **Good Example:** `"Extract the product name from the item detail page."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Try to find and get some text that looks like a product name, but make sure it's not too long and is relevant."`
+  
+  **Why it's bad?** Too vague, overly verbose, and doesn't specify what text to extract.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the element from which text should be extracted using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+## Output Options
+
+### ☐ Assign to variable *(Optional)*
+Store the extracted text in a variable for later use in the workflow.
+
+### ☐ Insert to table *(Optional)*
+Save the extracted text into a structured table for further processing.
+
+## Usage Example
+
+<Card title="Scenario: Extracting a product name from an e-commerce page">
+  ### ✅ Good Prompt:
+  *"Extract the product name from the item detail page."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `h1.product-title`
+  </Card>
+
+  <Card>
+    XPath: `//h1[@class='product-title']`
+  </Card>
+
+  ### ✅ Output Options:
+  - **Assign to variable** → `product_name`
+  - **Insert to table** → Column: `Product Name`
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the selector if the webpage structure changes.
+  - Ensure the selector uniquely identifies the target element to avoid extracting unintended text.
+  - If the page content is dynamic, consider using a robust selector or referencing workflow data.
+</Warning> 

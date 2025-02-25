@@ -1,7 +1,121 @@
 ---
 title: "Create Element"
-description: "Dynamically create new DOM elements"
+description: "Dynamically create and insert new HTML elements into webpages. Use this action to modify page structure, inject custom content, and add interactive components."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and re-insert the element if needed.
+
+<Note type="success">
+  **Good Example:** `"Create a new div at the end of the body to display a custom notification."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Put some new element somewhere on the page."`
+  
+  **Why it's bad?** Too vague, lacks specificity about the element type, placement, and purpose.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the target element relative to which the new element will be inserted:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the target element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the target element.
+  </Card>
+</CardGroup>
+
+### ☐ Insert Position *(Required)*
+<Card>
+  Choose where to place the new element relative to the target:
+
+  - **As last child** – Places the new element inside and at the end of the target element
+    ```html
+    <!-- Target element -->
+    <div class="parent">
+      <p>Existing child</p>
+      <!-- New element goes here -->
+    </div>
+    ```
+
+  - **As first child** – Places the new element inside and at the start of the target element
+    ```html
+    <!-- Target element -->
+    <div class="parent">
+      <!-- New element goes here -->
+      <p>Existing child</p>
+    </div>
+    ```
+
+  - **As previous sibling** – Places the new element before the target element
+    ```html
+    <!-- New element goes here -->
+    <!-- Target element -->
+    <div class="target">Content</div>
+    ```
+
+  - **As next sibling** – Places the new element after the target element
+    ```html
+    <!-- Target element -->
+    <div class="target">Content</div>
+    <!-- New element goes here -->
+    ```
+
+  - **Replace target element** – Removes the target element and puts the new element in its place
+    ```html
+    <!-- Target element will be replaced -->
+    <div class="target">Content</div>
+
+    <!-- Becomes -->
+    <!-- New element -->
+    ```
+</Card>
+
+### ☐ Element HTML *(Required)*
+<Card>
+  Define the HTML structure of the new element:
+  ```html
+  <div class="custom-notification">
+    Your action was successful!
+  </div>
+  ```
+</Card>
+
+### ☐ Advanced Options *(Optional)*
+<Card>
+  - Run Before Page Loaded: Create element before the page fully loads
+  - Custom Attributes: Add data attributes, IDs, or classes
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Adding a notification div">
+  ### ✅ Good Prompt:
+  *"Create a new div at the end of the body to display a custom notification."*
+
+  ### ✅ Good Element Selector:
+  <Card>
+    CSS Selector: `body`
+  </Card>
+
+  ### ✅ Element Configuration:
+  - **Insert Position:** As last child
+  - **HTML Structure:**
+  ```html
+  <div class="custom-notification">
+    Your action was successful!
+  </div>
+  ```
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the element creation if needed.
+  - Ensure the selector correctly identifies the target placement.
+  - When replacing elements, verify that the original element isn't critical to page functionality.
+  - Test the created element's styling and behavior to ensure it integrates properly with the page.
+</Warning> 

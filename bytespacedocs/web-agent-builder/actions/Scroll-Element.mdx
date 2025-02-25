@@ -1,7 +1,74 @@
 ---
 title: "Scroll Element"
-description: "Control scrolling behavior of web elements"
+description: "Control scrolling behavior of web elements. Use this action to navigate through content, load dynamic elements, or ensure elements are in view before interacting with them."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and re-adjust the scrolling behavior if needed.
+
+<Note type="success">
+  **Good Example:** `"Scroll down 500 pixels to load more search results."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Move the page down a bit so that more things appear, but make sure it's not too much scrolling."`
+  
+  **Why it's bad?** Too vague, doesn't specify how much to scroll, and lacks a clear purpose.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the element to be scrolled using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+    Default: `"html"` (scrolls the entire page)
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+### ☐ Scroll Behavior *(Required)*
+<CardGroup cols={3}>
+  <Card title="Horizontal Scroll">
+    Specify how many pixels to scroll left/right
+    *(Optional, Default: 0)*
+  </Card>
+  <Card title="Vertical Scroll">
+    Specify how many pixels to scroll up/down
+    *(Optional, Default: 0)*
+  </Card>
+  <Card title="Scroll to Element">
+    If checked, automatically scroll the selected element into view
+    *(Optional)*
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario: Scrolling down to load more search results">
+  ### ✅ Good Prompt:
+  *"Scroll down 500 pixels to load more search results."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `html` *(for full-page scrolling)*
+  </Card>
+
+  <Card>
+    XPath: `//div[@class='results-container']` *(to scroll within a specific section)*
+  </Card>
+
+  ### ✅ Scroll Behavior:
+  - **Vertical Scroll:** `500` pixels
+  - **Horizontal Scroll:** `0` pixels
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the scrolling behavior if needed.
+  - Ensure the selector uniquely identifies the target element to avoid unintended scrolling.
+  - Using "Scroll to Element" is recommended when working with dynamically loaded content that requires an element to be in view before interaction.
+</Warning> 

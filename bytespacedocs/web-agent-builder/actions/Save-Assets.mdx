@@ -1,7 +1,82 @@
 ---
 title: "Save Assets"
-description: "Download and save web assets"
+description: "Download and save media elements from webpages. Use this action to collect images, audio, video, or other downloadable files for archiving or further processing."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and re-locate the element if needed.
+
+<Note type="success">
+  **Good Example:** `"Save the main product image from the product details page."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Get the image from the page and save it somewhere."`
+  
+  **Why it's bad?** Too vague, lacks specificity about which image to save.
+</Note>
+
+### ☐ Asset Type *(Required)*
+<CardGroup cols={2}>
+  <Card title="Media Element">
+    Save images, audio, or video elements directly from the page.
+  </Card>
+  <Card title="File Download">
+    Handle downloadable files triggered by links or buttons.
+  </Card>
+</CardGroup>
+
+### ☐ Element Selector *(Required for Media Elements)*
+Define the element to be saved using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+### ☐ Save Options *(Optional)*
+<CardGroup cols={2}>
+  <Card title="Custom Filename">
+    Specify a name for the saved file
+    (e.g., `product-image.jpeg`)
+  </Card>
+  <Card title="Conflict Handling">
+    Choose how to handle duplicate filenames:
+    - Uniquify
+    - Overwrite
+    - Skip
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario: Saving a product image">
+  ### ✅ Good Prompt:
+  *"Save the main product image from the product details page."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `img.product-main-image`
+  </Card>
+
+  <Card>
+    XPath: `//img[@class='product-main-image']`
+  </Card>
+
+  ### ✅ Save Configuration:
+  - **Asset Type:** Media Element
+  - **Filename:** `product-image.jpeg`
+  - **On Conflict:** Uniquify
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the asset-saving process if needed.
+  - Ensure the selector uniquely identifies the target asset to avoid saving unintended files.
+  - For file downloads, make sure the webpage's download mechanism is compatible with the automation.
+</Warning> 

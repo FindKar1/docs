@@ -1,7 +1,86 @@
 ---
 title: "Press Key"
-description: "Simulate keyboard key presses"
+description: "Simulate keyboard key presses on webpage elements. Use this action to trigger keyboard shortcuts, submit forms, navigate menus, and simulate user input."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and re-trigger the key press if needed.
+
+<Note type="success">
+  **Good Example:** `"Press the 'Enter' key to submit the login form."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Press whatever key makes sense to continue."`
+  
+  **Why it's bad?** Too vague, lacks specificity about the key and its intended action.
+</Note>
+
+### ☐ Target Element *(Optional)*
+Define the element that should receive the key press using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+### ☐ Key Action *(Required)*
+<CardGroup cols={3}>
+  <Card title="Press">
+    Simulate a single key press
+  </Card>
+  <Card title="Hold">
+    Hold a key down for a duration
+  </Card>
+  <Card title="Release">
+    Release a previously held key
+  </Card>
+</CardGroup>
+
+### ☐ Key Selection *(Required)*
+<Card>
+  Choose the key to simulate:
+  - Special keys: `Enter`, `Esc`, `Tab`, `ArrowUp`, etc.
+  - Character keys: `a`, `b`, `1`, `2`, etc.
+  - Modifier keys: `Shift`, `Ctrl`, `Alt`, etc.
+</Card>
+
+### ☐ Press Duration *(Optional)*
+<Card>
+  Specify how long to hold the key (in milliseconds)
+  - Default: `0` (instant press)
+  - Longer durations simulate held keys
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Submitting a form with Enter">
+  ### ✅ Good Prompt:
+  *"Press the 'Enter' key to submit the login form."*
+
+  ### ✅ Good Element Selector:
+  <Card>
+    CSS Selector: `input#password`
+  </Card>
+
+  <Card>
+    XPath: `//input[@id='password']`
+  </Card>
+
+  ### ✅ Key Configuration:
+  - **Action:** Press
+  - **Key:** `Enter`
+  - **Duration:** `0` milliseconds
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the key press if needed.
+  - If no target element is specified, the key press will be sent to the active element.
+  - Some keyboard shortcuts may require multiple keys or specific timing—adjust the configuration accordingly.
+</Warning> 

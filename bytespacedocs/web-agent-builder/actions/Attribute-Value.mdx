@@ -1,7 +1,102 @@
 ---
 title: "Attribute Value"
-description: "Get and set element attribute values"
+description: "Get and set element attribute values on a webpage. Use this action to extract data like URLs from href attributes, retrieve alt text, set custom values, or modify properties dynamically."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and re-find the element if the webpage structure changes.
+
+<Note type="success">
+  **Good Example:** `"Retrieve the 'href' attribute from the first search result link."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Find some attribute that looks useful and get it if possible."`
+  
+  **Why it's bad?** Too vague, lacks specificity about what to retrieve.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the target element using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+### ☐ Action Type *(Required)*
+<CardGroup cols={2}>
+  <Card title="Get attribute value">
+    Extracts the specified attribute from the selected element.
+  </Card>
+  <Card title="Set attribute value">
+    Modifies the specified attribute with a new value.
+  </Card>
+</CardGroup>
+
+### ☐ Attribute Name *(Required)*
+<Card>
+  The exact name of the attribute to be retrieved or modified (e.g., `href`, `alt`, `class`, `data-id`).
+</Card>
+
+### ☐ Output Options *(Optional)*
+<CardGroup cols={2}>
+  <Card title="Assign to variable">
+    Store the retrieved attribute value for later use.
+  </Card>
+  <Card title="Insert to table">
+    Save the extracted attribute value into a structured table.
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario 1: Retrieving a link's URL">
+  ### ✅ Good Prompt:
+  *"Retrieve the 'href' attribute from the first search result link."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `a.result-link`
+  </Card>
+
+  <Card>
+    XPath: `//a[contains(@class, 'result-link')]`
+  </Card>
+
+  ### ✅ Configuration:
+  - **Action Type:** Get attribute value
+  - **Attribute Name:** `href`
+  - **Output:** Assign to variable `link_url`
+</Card>
+
+<Card title="Scenario 2: Setting a button's label">
+  ### ✅ Good Prompt:
+  *"Set the 'aria-label' attribute of the 'Submit' button to 'Send Application'."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `button.submit`
+  </Card>
+
+  <Card>
+    XPath: `//button[@class='submit']`
+  </Card>
+
+  ### ✅ Configuration:
+  - **Action Type:** Set attribute value
+  - **Attribute Name:** `aria-label`
+  - **Value to Set:** `"Send Application"`
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the selector if needed.
+  - Ensure the attribute name is spelled correctly to avoid errors.
+  - When setting an attribute value, ensure that modifying it won't break functionality on the webpage.
+</Warning> 

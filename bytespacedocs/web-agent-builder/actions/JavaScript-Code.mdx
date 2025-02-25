@@ -1,7 +1,46 @@
 ---
 title: "JavaScript Code"
-description: "Execute custom JavaScript code in your automation"
+description: "Execute custom JavaScript code in your automation. Use this action to run advanced scripts, modify elements, interact with APIs, and perform operations not covered by standard automation blocks."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug the automation if website changes impact execution.
+
+<Note type="success">
+  **Good Example:** `"Run a script to log 'Hello world!' in the console and proceed to the next block."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Execute some JavaScript that does something useful on the page."`
+  
+  **Why it's bad?** Too vague, lacks specificity about the intended script execution.
+</Note>
+
+### ☐ JavaScript Code Editor *(Required)*
+<Card>
+  Write the JavaScript code to be executed within the webpage.
+  Ensure that the script ends with `bytespaceNextBlock()` to continue execution.
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Logging a message and clicking a button">
+  ### ✅ Good Prompt:
+  *"Run a script to log 'Hello world!' in the console and click the 'Submit' button."*
+
+  ### ✅ Good JavaScript Code:
+  ```javascript
+  console.log("Hello world!");
+  document.querySelector("button.submit").click();
+  bytespaceNextBlock();
+  ```
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and re-adjust the script if needed.
+  - The script should **always end with `bytespaceNextBlock()`** to ensure workflow execution continues.
+  - Ensure the JavaScript is compatible with the webpage environment and doesn't cause unexpected behavior.
+</Warning> 

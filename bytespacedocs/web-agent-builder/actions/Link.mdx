@@ -1,7 +1,53 @@
 ---
 title: "Link"
-description: "Handle and interact with hyperlinks"
+description: "Interact with hyperlinks on a webpage. Use this action to navigate to new pages, open external links, or trigger JavaScript-based navigation."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction that describes what this step should do. This helps the AI debug and re-find the element if the webpage structure changes.
+
+<Note type="success">
+  **Good Example:** `"Click the 'Learn More' link to navigate to the details page."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Find and click some kind of link that takes you somewhere useful."`
+  
+  **Why it's bad?** Too vague, doesn't specify which link to interact with.
+</Note>
+
+### ☐ Element Selector *(Required)*
+Define the hyperlink element to be clicked using one of the following methods:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors to identify the element.
+  </Card>
+  <Card title="XPath">
+    Use an XPath expression to precisely locate the element.
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario: Clicking a 'Learn More' link">
+  ### ✅ Good Prompt:
+  *"Click the 'Learn More' link to navigate to the details page."*
+
+  ### ✅ Good Element Selectors:
+  <Card>
+    CSS Selector: `a.learn-more`
+  </Card>
+
+  <Card>
+    XPath: `//a[text()='Learn More']`
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the selector if needed.
+  - Ensure the selector uniquely identifies the link to avoid unintended navigation.
+  - Some links trigger JavaScript events instead of direct navigation—ensure the action works as expected before deploying.
+</Warning> 
