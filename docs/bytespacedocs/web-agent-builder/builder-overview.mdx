@@ -66,17 +66,30 @@ export const NeonCard = ({
   )
 }
 
+### What Exactly is the Builder?
+
+A Chrome extension that lets you create, test, and run automations directly in your browser. No APIs, no backend integrations—just seamless automation that works exactly like a human would.
+
+### What Can You Do in the Builder?
+Design automations visually—click, select, and build workflows without code.
+Run and test locally before deploying to the Bytespace marketplace.
+Leverage your real browsing environment—using your logins, cookies, and authentication data to bypass captchas, 2FA, and other security roadblocks.
+The Builder is built for precision. Unlike AI tools that make unpredictable decisions, Bytespace gives you complete control—ensuring your automations run exactly as expected, every time.
+
+Now that you know what the Builder is, let's dive into how to actually build an automation.
+
 <Frame>
   <img 
     src="../../../public/images/BytespaceBuilder.png" 
     alt="Bytespace Builder Interface" 
     className="rounded-lg"
+    style={{ width: '100%', height: 'auto' }}
   />
 </Frame>
 
-### What is the Web-Agent Builder?
+### How do you build automations? 
 
-A Chrome extension that lets you build, test, and run automations locally. Once built, automations can be deployed to the Bytespace Marketplace and leveraged in the cloud. The builder provides a suite of tools to automate tasks on websites, making it easy to create powerful workflows—no backend integrations required.
+
 
 <CardGroup cols={13} className="flex flex-row gap-4">
   <NeonCard 
@@ -154,43 +167,3 @@ Our builder and chrome extension use a combination of AI, XPath, and CSS selecto
   </div>
 </div>
 
-### **Full Production Infrastructure (Coming Soon)**
-
-Our production infrastructure lets you deploy automations to run on virtual browsers in the background, keeping your personal computer free while workflows operate on autopilot. This will allow you to:
-
-- **Schedule Automations**: Set specific times or recurring intervals for your agents to run, ensuring tasks are completed exactly when needed.
-- **Trigger Automations Based on Conditions**: Configure triggers and conditions that activate your agents automatically, like a change on a website or receiving new data.
-- **Integrate with Other Apps**: Connect your agents to external platforms, APIs, or workflows to create seamless, end-to-end automation solutions.
-
-Once deployed to the cloud, your automations will stay logged in, bypass captchas and bot detection, and adapt automatically to interface changes on your favorite websites.
-
-<CardGroup cols={4}>
-  <Card
-    title="Authentication"
-    icon="key"
-    href="/advanced-features/authentication"
-  >
-    Handle logins securely
-  </Card>
-  <Card
-    title="Captchas"
-    icon="robot"
-    href="/advanced-features/captchas"
-  >
-    Bypass verification challenges
-  </Card>
-  <Card
-    title="Residential Proxies"
-    icon="globe"
-    href="/advanced-features/proxies"
-  >
-    Access geo-restricted content
-  </Card>
-  <Card
-    title="AI De-Bugger"
-    icon="wand-magic-sparkles"
-    href="/builder-tools/ai-debugger"
-  >
-    Smart workflow troubleshooting
-  </Card>
-</CardGroup> 
