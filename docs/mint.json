@@ -37,7 +37,8 @@
     {
       "group": "Docs",
       "pages": [
-        "bytespacedocs/welcome"
+        "bytespacedocs/welcome",
+        "bytespacedocs/overview"
       ]
     },
     {
@@ -135,7 +136,7 @@
     {
       "group": "Web Agent Builder",
       "pages": [
-        "bytespacedocs/web-agent-builder/overview",
+        "bytespacedocs/web-agent-builder/builder-overview",
         {
           "group": "Navigation",
           "icon": "globe",
