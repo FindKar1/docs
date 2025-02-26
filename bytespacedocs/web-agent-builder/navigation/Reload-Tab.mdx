@@ -1,7 +1,40 @@
 ---
 title: "Reload Tab"
-description: "Refresh the current browser tab"
+description: "Refresh the current browser tab. Use this action to update page content, reset form states, and ensure data is current in your automation workflow."
 ---
 
-### Overview
-Documentation coming soon... 
+## Overview
+
+The Reload Tab block refreshes the current browser tab. This is particularly useful when:
+- Updating page content
+- Resetting form states
+- Clearing cached data
+- Ensuring data is current
+
+## Behavior
+
+<Card>
+  This block:
+  - Reloads the current tab
+  - Works like pressing F5/refresh
+  - Does not require any configuration
+  - Resets page state
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Page content refresh">
+  ### Common Use Cases:
+  - After form submissions
+  - When data needs updating
+  - Following dynamic content changes
+  - Resetting page state
+</Card>
+
+## Notes
+<Warning>
+  - This block reloads the current tab only
+  - Unsaved changes may be lost
+  - Consider form data persistence
+  - May trigger page load handlers
+</Warning> 

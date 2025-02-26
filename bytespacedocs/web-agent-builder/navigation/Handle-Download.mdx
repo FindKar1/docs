@@ -1,7 +1,72 @@
 ---
 title: "Handle Download"
-description: "Manage file downloads in your automation workflow"
+description: "Manage file downloads in your automation workflow. Use this action to track downloads, store file paths, and ensure downloads complete successfully."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and adjust download handling if needed.
+
+<Note type="success">
+  **Good Example:** `"Wait for a file to download and store the file path in a table."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Download something and keep track of it."`
+  
+  **Why it's bad?** Too vague, lacks specificity about handling the download.
+</Note>
+
+### ☐ Download Timeout *(Required)*
+<Card>
+  Maximum wait time for download completion:
+  - Specified in milliseconds
+  - Example: `20000` (20 seconds)
+  - Adjust based on file size and connection speed
+</Card>
+
+### ☐ Storage Options *(Required)*
+<CardGroup cols={2}>
+  <Card title="Assign to Variable">
+    Save file path to a variable:
+    - Variable name required
+    - For later reference
+    - Dynamic usage
+  </Card>
+  <Card title="Insert to Table">
+    Store file path in a table:
+    - Column selection required
+    - Structured storage
+    - Download tracking
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario: Managing file downloads">
+  ### ✅ Good Prompt:
+  *"Wait for the file to download and store its file path in the 'Downloaded Files' column."*
+
+  ### ✅ Download Configuration:
+  <Card>
+    Timeout: `20000` milliseconds
+    Storage: Insert to Table
+    Column: `Downloaded Files`
+  </Card>
+
+  ### Alternative Example:
+  <Card>
+    Timeout: `30000` milliseconds
+    Storage: Assign to Variable
+    Variable: `downloaded_file_path`
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust download handling if needed.
+  - At least one storage option must be selected (variable or table).
+  - Set appropriate timeout values based on expected download sizes.
+  - Consider network conditions when configuring timeouts.
+</Warning> 

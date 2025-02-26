@@ -1,7 +1,76 @@
 ---
 title: "Switch Tab"
-description: "Switch between different browser tabs in your automation workflow"
+description: "Switch between different browser tabs in your automation workflow. Use this action to navigate between tabs based on URL patterns, titles, or positions."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and adjust tab-switching logic if needed.
+
+<Note type="success">
+  **Good Example:** `"Switch to the Bytespace tab based on its URL pattern."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Find some tab and go there."`
+  
+  **Why it's bad?** Too vague, lacks specificity about how the tab should be found.
+</Note>
+
+### ☐ Find Tab By *(Required)*
+<CardGroup cols={2}>
+  <Card title="Match Patterns">
+    Find a tab by matching its URL pattern
+    - Example: `https://bytespace.ai/*`
+  </Card>
+  <Card title="Tab Title">
+    Find a tab by its window title
+    - Example: `"Bytespace Dashboard"`
+  </Card>
+  <Card title="Next Tab">
+    Switch to the next tab in sequence
+    - No additional input needed
+  </Card>
+  <Card title="Previous Tab">
+    Switch to the previous tab in sequence
+    - No additional input needed
+  </Card>
+  <Card title="Tab Index">
+    Switch to a specific tab position
+    - Example: `0` for first tab
+  </Card>
+</CardGroup>
+
+### ☐ Create If No Match *(Optional)*
+<Card>
+  If enabled, creates a new tab when no matching tab is found:
+  - Opens the specified URL in a new tab
+  - Continues automation in the new tab
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Switching to Bytespace dashboard">
+  ### ✅ Good Prompt:
+  *"Switch to the Bytespace tab based on its URL pattern."*
+
+  ### ✅ Find Tab Configuration:
+  <Card>
+    Method: Match Patterns
+    Pattern: `https://bytespace.ai/*`
+  </Card>
+
+  <Card>
+    Alternative Method: Tab Title
+    Title: `"Bytespace Dashboard"`
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust tab-switching behavior if needed.
+  - Tab positions may change if tabs are opened or closed during automation.
+  - URL patterns support wildcards (*) for flexible matching.
+  - Consider enabling "Create If No Match" for more robust workflows.
+</Warning> 

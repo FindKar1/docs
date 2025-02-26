@@ -1,7 +1,62 @@
 ---
 title: "Get Tab URL"
-description: "Retrieve the current URL of a browser tab"
+description: "Retrieve and store the current URL of a browser tab. Use this action to track navigation, save session data, or reference URLs in your automation workflow."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and adjust URL retrieval if needed.
+
+<Note type="success">
+  **Good Example:** `"Retrieve the URL of the active tab and store it in a table."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Find some link and get it."`
+  
+  **Why it's bad?** Too vague, lacks specificity about retrieving the tab URL.
+</Note>
+
+### ☐ Storage Options *(Required)*
+<CardGroup cols={2}>
+  <Card title="Assign to Variable">
+    Save URL to a variable:
+    - Variable name required
+    - For later reference
+    - Dynamic usage
+  </Card>
+  <Card title="Insert to Table">
+    Store URL in a table:
+    - Column selection required
+    - Structured storage
+    - Data collection
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario: Storing tab URLs">
+  ### ✅ Good Prompt:
+  *"Retrieve the URL of the active tab and store it in the 'Visited Pages' table column."*
+
+  ### ✅ Storage Configuration:
+  <Card>
+    Method: Insert to Table
+    Column: `Visited Pages`
+  </Card>
+
+  ### Alternative Example:
+  <Card>
+    Method: Assign to Variable
+    Variable: `current_tab_url`
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and ensure URL retrieval works correctly.
+  - At least one storage option must be selected (variable or table).
+  - Retrieved URLs can be used in later automation steps.
+  - Consider URL format and encoding for special characters.
+</Warning> 

@@ -1,7 +1,40 @@
 ---
 title: "Go Back"
-description: "Navigate to the previous page in browser history"
+description: "Navigate to the previous page in browser history. Use this action to return to previously visited pages, handle multi-step workflows, and implement back-navigation patterns."
 ---
 
-### Overview
-Documentation coming soon... 
+## Overview
+
+The Go Back block navigates to the previous page in the browser history. This is particularly useful when:
+- Returning to search results
+- Handling multi-step forms
+- Implementing back-navigation patterns
+- Reverting to previous states
+
+## Behavior
+
+<Card>
+  This block:
+  - Returns to the previous page in history
+  - Works like the browser's back button
+  - Does not require any configuration
+  - Depends on browser history
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Product browsing workflow">
+  ### Common Use Cases:
+  - After viewing product details
+  - Following form submission
+  - When canceling a process
+  - Returning to search results
+</Card>
+
+## Notes
+<Warning>
+  - Only works when there's a previous page in history
+  - May not work after certain page redirects
+  - Consider page reload requirements
+  - Verify the target page is in history
+</Warning> 

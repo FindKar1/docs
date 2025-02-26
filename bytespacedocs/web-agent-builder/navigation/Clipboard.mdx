@@ -1,7 +1,73 @@
 ---
 title: "Clipboard"
-description: "Manage clipboard operations in your automation"
+description: "Manage clipboard operations in your automation workflow. Use this action to copy and paste text, transfer data between steps, and interact with clipboard-dependent elements."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and adjust clipboard operations if needed.
+
+<Note type="success">
+  **Good Example:** `"Copy the extracted text to the clipboard for later use."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Do something with the clipboard."`
+  
+  **Why it's bad?** Too vague, lacks specificity about what should be copied or retrieved.
+</Note>
+
+### ☐ Clipboard Action *(Required)*
+<CardGroup cols={2}>
+  <Card title="Get Clipboard Data">
+    Retrieve current clipboard contents:
+    - Can be assigned to variables
+    - Can be inserted into tables
+    - Useful for data extraction
+  </Card>
+  <Card title="Insert Text to Clipboard">
+    Copy specified text to clipboard:
+    - Static text strings
+    - Variable content
+    - Formatted data
+  </Card>
+</CardGroup>
+
+### ☐ Action Configuration *(Required)*
+<Card>
+  Based on selected action:
+  - **For Get Clipboard:**
+    - Variable name for storage
+    - Table column for insertion
+  - **For Insert Text:**
+    - Text content to copy
+    - Formatting options
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Managing clipboard data">
+  ### ✅ Good Prompt:
+  *"Copy the extracted text to the clipboard for later use."*
+
+  ### ✅ Clipboard Configuration:
+  <Card>
+    Action: Insert Text to Clipboard
+    Text: `"Bytespace Automation"`
+  </Card>
+
+  ### Alternative Example:
+  <Card>
+    Action: Get Clipboard Data
+    Store in: `clipboard_content` variable
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust clipboard operations if needed.
+  - Some websites may block clipboard access due to security restrictions.
+  - Consider handling cases where clipboard operations might fail.
+  - Ensure copied text is properly formatted for its intended use.
+</Warning> 

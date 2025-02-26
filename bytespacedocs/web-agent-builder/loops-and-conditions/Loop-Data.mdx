@@ -3,5 +3,239 @@ title: "Loop Data"
 description: "Iterate through data sets in your automation"
 ---
 
-### Overview
-Documentation coming soon... 
+The Loop Data block is a powerful tool that lets you repeat actions over a set of data. Think of it like a "repeat for each" instruction - for example, sending an email to each customer in a list, or clicking every product link on a page.
+
+## Inputs
+
+### ☐ Description *(Optional)*
+A brief note explaining what this loop will do. This helps you track your automation's purpose.
+
+<Note type="success">
+  **Good Examples:**
+  - "Process each row in customer data table"
+  - "Click through all product links on page"
+  - "Send welcome email to new subscribers"
+</Note>
+
+<Note type="danger">
+  **Bad Examples:**
+  - "Loop through stuff"
+  - "Do something multiple times"
+  
+  **Why they're bad:** Too vague, doesn't specify what data is being processed
+</Note>
+
+### ☐ Loop Type *(Required)*
+Choose what type of data to iterate through:
+
+<CardGroup cols={1}>
+  <Card title="Table">
+    **Description:**
+    Loop through rows in a data table or spreadsheet data.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Each row becomes available as variables
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Process data row by row
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Works with CSV, Excel, or database exports
+    
+    **Example Use Case:**
+    *Processing a customer list with columns for name, email, and status*
+  </Card>
+
+  <Card title="Numbers">
+    **Description:**
+    Loop through a sequence of numbers, counting up or down.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Define start and end numbers
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Control count direction
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Set custom step intervals
+    
+    **Example Use Case:**
+    *Navigate through pages 1-10 of search results*
+  </Card>
+
+  <Card title="Variable">
+    **Description:**
+    Loop through items stored in a variable from previous steps.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Access array elements sequentially
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Use data from earlier automation steps
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Process lists dynamically
+    
+    **Example Use Case:**
+    *Visit each URL from a list of collected product links*
+  </Card>
+
+  <Card title="Elements">
+    **Description:**
+    Loop through multiple elements found on a webpage.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Process matching elements one by one
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Use CSS selectors or XPath
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Handle dynamic content
+    
+    **Example Use Case:**
+    *Click each "Add to Cart" button matching `.cart-button`*
+  </Card>
+</CardGroup>
+
+### ☐ Loop Settings *(Required)*
+Configure how the loop processes your data:
+
+<CardGroup cols={1}>
+  <Card title="Max Items">
+    **Description:**
+    Set the maximum number of items to process in this loop.
+    
+    **Key Points:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Set to `0` for no limit
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Prevents infinite loops
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Perfect for testing
+    
+    **Best Practice:**
+    *Start with a small number (e.g., 5) when testing new automations*
+  </Card>
+
+  <Card title="Start Index">
+    **Description:**
+    Choose which item to start processing from.
+    
+    **Key Points:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ `0` starts from the first item
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Skip already processed items
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Resume from specific point
+    
+    **Best Practice:**
+    *Use with "Resume Last Workflow" for handling large datasets*
+  </Card>
+</CardGroup>
+
+### ☐ Advanced Options *(Optional)*
+- **Resume Last Workflow:** Continue from where previous run stopped
+  - Perfect for large datasets
+  - Handles interruptions gracefully
+  - Remembers progress between runs
+
+- **Reverse Loop Order:** Process items in reverse order
+  - Start from the end of the list
+  - Useful for newest-first processing
+  - Example: Latest social media posts
+
+## Usage Examples
+
+<CardGroup cols={1}>
+  <Card title="1. Customer Data Processing" icon="table">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Table</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Max Items</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">100</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Resume</span>
+        <span className="text-green-600">✓ Enabled</span>
+      </div>
+    </div>
+    <Note className="mt-2">
+      Process customer records in batches of 100. If interrupted, resumes from last processed record.
+      Perfect for large customer databases.
+    </Note>
+  </Card>
+
+  <Card title="2. Product Link Scraper" icon="link">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Elements</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">a.product-link</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Max Items</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0 (no limit)</span>
+      </div>
+    </div>
+    <Note className="mt-2">
+      Finds all product links on a page and processes each one. Useful for price monitoring
+      or product data extraction.
+    </Note>
+  </Card>
+
+  <Card title="3. Pagination Handler" icon="arrow-right">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Numbers</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">From</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">1</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">To</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">10</span>
+      </div>
+    </div>
+    <Note className="mt-2">
+      Navigate through 10 pages of results. Common for search results or product catalogs
+      where data spans multiple pages.
+    </Note>
+  </Card>
+</CardGroup>
+
+## Working with Loop Data
+
+### Available Variables
+Each loop iteration provides these variables:
+- `loop.current` - Current item being processed
+- `loop.index` - Current iteration number (0-based)
+- `loop.isFirst` - True if first iteration
+- `loop.isLast` - True if last iteration
+
+### Best Practices
+<CardGroup cols={2}>
+  <Card title="Testing">
+    - Start with small Max Items
+    - Test edge cases (empty data)
+    - Verify loop exit conditions
+  </Card>
+  <Card title="Production">
+    - Use Resume for reliability
+    - Monitor loop progress
+    - Handle errors gracefully
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Always set Max Items when testing new loops
+  - Use Resume Last Workflow for processing large datasets
+  - Test your loop with a small sample before running on full data
+  - Consider using Loop Breakpoint during development
+</Warning> 

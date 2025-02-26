@@ -3,5 +3,141 @@ title: "Element Exists"
 description: "Check for the existence of web elements before proceeding"
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Description *(Optional)*
+A brief note explaining what this check is for. This is not an AI prompt.
+
+<Note type="success">
+  **Good Example:** "Check if login button exists before clicking"
+</Note>
+
+<Note type="danger">
+  **Bad Example:** "Look for something on the page"
+  
+  **Why it's bad?** Too vague, doesn't specify what element to look for
+</Note>
+
+### ☐ Element Type *(Required)*
+Choose how to identify the element:
+<CardGroup cols={2}>
+  <Card title="CSS Selector">
+    Use standard CSS selectors (e.g., `.button`, `#login-form`)
+  </Card>
+  <Card title="XPath">
+    Use XPath expressions (e.g., `//button[text()='Submit']`)
+  </Card>
+</CardGroup>
+
+### ☐ Retry Settings *(Required)*
+<CardGroup cols={2}>
+  <Card title="Try For">
+    Number of retries before failure
+    *(Default: 3)*
+  </Card>
+  <Card title="Timeout">
+    Milliseconds to wait between retries
+    *(Default: 500ms)*
+  </Card>
+</CardGroup>
+
+### ☐ Error Handling *(Optional)*
+Choose whether to throw an error if element isn't found:
+- Disabled (Default): Continue automation
+- Enabled: Stop execution with error
+
+## Outputs
+
+### ✓ Element Found Path
+If the element is found within the specified retry attempts:
+- Automation continues down this path
+- Use for actions that require the element's presence
+- Example: Click the login button after confirming it exists
+
+### ✗ Element Not Found Path
+If the element is not found after all retry attempts:
+- **With Error Handling Disabled:** Automation continues down this path
+- **With Error Handling Enabled:** Automation stops with error
+- Use for alternative flows or fallback actions
+- Example: Show "Try Later" message if product is out of stock
+
+<Note>
+  Configure both paths to handle all scenarios gracefully. The Element Not Found path is especially useful for implementing fallback behaviors or alternative workflows.
+</Note>
+
+## Usage Examples
+
+<CardGroup cols={1}>
+  <Card title="1. Login Button Check" icon="right-to-bracket">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Element Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">CSS Selector</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">#login-button</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Settings</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Try For: 3, Timeout: 500ms</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Error</span>
+        <span className="text-green-600">✓ Enabled</span>
+      </div>
+    </div>
+    <Note className="mt-2">Ensures login button is visible before clicking</Note>
+  </Card>
+
+  <Card title="2. Product Price Verification" icon="tag">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Element Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">XPath</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">//span[@class='product-price']</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Settings</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Try For: 2, Timeout: 1000ms</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Error</span>
+        <span className="text-red-600">✗ Disabled</span>
+      </div>
+    </div>
+    <Note className="mt-2">Checks for price element without stopping automation if missing</Note>
+  </Card>
+
+  <Card title="3. CAPTCHA Detection" icon="shield">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Element Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">CSS Selector</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">#captcha-box</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Settings</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Try For: 1, Timeout: 500ms</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Error</span>
+        <span className="text-green-600">✓ Enabled</span>
+      </div>
+    </div>
+    <Note className="mt-2">Stops automation if CAPTCHA is detected</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Use descriptive selectors to uniquely identify elements
+  - Adjust retry settings based on page load times
+  - Enable error handling for critical elements
+</Warning> 

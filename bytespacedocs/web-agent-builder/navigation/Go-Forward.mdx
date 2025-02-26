@@ -1,7 +1,40 @@
 ---
 title: "Go Forward"
-description: "Navigate forward in browser history"
+description: "Navigate forward in browser history. Use this action to return to pages after going back, handle multi-step workflows, and implement forward-navigation patterns."
 ---
 
-### Overview
-Documentation coming soon... 
+## Overview
+
+The Go Forward block navigates to the next page in the browser history. This is particularly useful when:
+- Returning to previously visited pages
+- Handling multi-step workflows
+- Implementing forward-navigation patterns
+- Restoring previous states
+
+## Behavior
+
+<Card>
+  This block:
+  - Moves to the next page in history
+  - Works like the browser's forward button
+  - Does not require any configuration
+  - Depends on browser history
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Product browsing workflow">
+  ### Common Use Cases:
+  - After using Go Back
+  - Restoring previous navigation
+  - When resuming a process
+  - Returning to forward pages
+</Card>
+
+## Notes
+<Warning>
+  - Only works when there's a forward page in history
+  - May not work after certain page redirects
+  - Consider page reload requirements
+  - Verify the target page is in forward history
+</Warning>

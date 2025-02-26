@@ -1,7 +1,38 @@
 ---
 title: "Close Tab"
-description: "Close the current browser tab or a specific tab"
+description: "Close browser tabs in your automation workflow. Use this action to manage open tabs, clean up after operations, and maintain a tidy browser state."
 ---
 
-### Overview
-Documentation coming soon... 
+## Overview
+
+The Close Tab block closes the currently active browser tab. This is particularly useful when:
+- Cleaning up after completing operations
+- Managing system resources
+- Maintaining organized workflows
+
+## Behavior
+
+<Card>
+  This block:
+  - Closes the currently active tab
+  - Returns focus to the previous tab
+  - Does not require any configuration
+  - Cannot be undone
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Multi-tab workflow cleanup">
+  ### Common Use Cases:
+  - After completing data extraction
+  - When finishing a sub-task in another tab
+  - During workflow cleanup operations
+</Card>
+
+## Notes
+<Warning>
+  - This block only affects the currently active tab
+  - Use Switch Tab first if you need to close a specific tab
+  - Ensure important data is saved before closing tabs
+  - Keep at least one tab open to continue automation
+</Warning> 

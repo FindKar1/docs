@@ -1,7 +1,46 @@
 ---
 title: "New Tab"
-description: "Learn how to open and manage new browser tabs in your automation workflow"
+description: "Open and manage new browser tabs in your automation workflow. Use this action to load external pages, handle multi-tab workflows, and navigate between different web applications."
 ---
 
-### Overview
-Documentation coming soon...
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and adjust the navigation if needed.
+
+<Note type="success">
+  **Good Example:** `"Open a new tab and navigate to https://bytespace.ai."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Go somewhere else on the internet."`
+  
+  **Why it's bad?** Too vague, lacks specificity about the target URL.
+</Note>
+
+### ☐ URL *(Required)*
+<Card>
+  The complete URL that should be opened in the new tab:
+  - Must include protocol (e.g., `https://`)
+  - Can be a static URL or variable reference
+  - Example: `https://bytespace.ai`
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Opening Bytespace in a new tab">
+  ### ✅ Good Prompt:
+  *"Open a new tab and navigate to https://bytespace.ai."*
+
+  ### ✅ Good URL Configuration:
+  - **Static URL:** `https://bytespace.ai`
+  - **Variable Reference:** `{{ target_url }}`
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust the tab-opening action if needed.
+  - Ensure URLs are properly formatted with the correct protocol (http:// or https://).
+  - Some websites may block automated tab openings due to browser security restrictions.
+  - Consider handling cases where the new tab fails to open or load.
+</Warning>

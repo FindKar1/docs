@@ -1,7 +1,86 @@
 ---
 title: "Take Screenshot"
-description: "Capture screenshots of web pages during automation"
+description: "Capture screenshots of web pages or elements during automation. Use this action to save visual records, debug UI elements, or document workflow states."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and adjust screenshot settings if needed.
+
+<Note type="success">
+  **Good Example:** `"Capture a screenshot of the entire webpage and save it as a PNG."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Take a picture of something."`
+  
+  **Why it's bad?** Too vague, lacks specificity about what should be captured and how.
+</Note>
+
+### ☐ Screenshot Type *(Required)*
+<CardGroup cols={3}>
+  <Card title="Page">
+    Captures visible portion of page:
+    - Current viewport only
+    - What user currently sees
+  </Card>
+  <Card title="Full Page">
+    Captures entire page length:
+    - Including scrolled content
+    - Full page height
+  </Card>
+  <Card title="Element">
+    Captures specific element:
+    - CSS selector required
+    - Element bounds only
+  </Card>
+</CardGroup>
+
+### ☐ Storage Options *(At least one required)*
+<CardGroup cols={3}>
+  <Card title="Save to Computer">
+    Save as local file:
+    - Custom filename
+    - PNG or JPG format
+  </Card>
+  <Card title="Insert to Table">
+    Store in table:
+    - Column selection
+    - Reference storage
+  </Card>
+  <Card title="Assign to Variable">
+    Store in variable:
+    - Variable name
+    - Path reference
+  </Card>
+</CardGroup>
+
+## Usage Example
+
+<Card title="Scenario: Capturing webpage states">
+  ### ✅ Good Prompt:
+  *"Take a full-page screenshot and save it as 'webpage_capture.png'."*
+
+  ### ✅ Screenshot Configuration:
+  <Card>
+    Type: Full Page
+    Save to: Computer
+    Filename: `webpage_capture.png`
+  </Card>
+
+  ### Alternative Example:
+  <Card>
+    Type: Element
+    Selector: `div.product-details`
+    Store in: Table column `Screenshots`
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust screenshot settings if needed.
+  - At least one storage option must be selected.
+  - Element screenshots require valid CSS selectors.
+  - Consider file format and size for different use cases.
+</Warning> 

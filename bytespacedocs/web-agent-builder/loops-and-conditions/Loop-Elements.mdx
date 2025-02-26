@@ -3,5 +3,242 @@ title: "Loop Elements"
 description: "Iterate through multiple web elements"
 ---
 
-### Overview
-Documentation coming soon... 
+The Loop Elements block allows you to process multiple elements on a webpage, such as product listings, comments, or any repeating content. Use it to scrape data, click through items, or handle dynamic content.
+
+## Inputs
+
+### ☐ Description *(Optional)*
+A brief note explaining what elements this loop will process.
+
+<Note type="success">
+  **Good Examples:**
+  - "Extract all product prices from search results"
+  - "Click through each pagination link"
+  - "Process all comments on the page"
+</Note>
+
+### ☐ Element Selection *(Required)*
+Choose how to identify the elements to loop through:
+
+<CardGroup cols={1}>
+  <Card title="CSS Selector or XPath">
+    **Description:**
+    Define which elements to process on the page.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Use CSS selectors (e.g., `.product-card`)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Use XPath expressions
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Match multiple elements at once
+    
+    **Example Use Case:**
+    *Select all product cards with class `.product-card`*
+  </Card>
+</CardGroup>
+
+### ☐ Load More Elements *(Optional)*
+Configure how to handle dynamically loaded content:
+
+<CardGroup cols={1}>
+  <Card title="Click Element">
+    **Description:**
+    Click a button or link to load more items.
+    
+    **Settings:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Element to click (e.g., "Load More" button)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Wait time after clicking
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Maximum attempts to load more
+    
+    **Example Use Case:**
+    *Click "Show More" button to load additional comments*
+  </Card>
+
+  <Card title="Scroll Action">
+    **Description:**
+    Scroll the page to trigger lazy loading.
+    
+    **Settings:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Scroll direction (up/down)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Wait time after scrolling
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Scroll to top/bottom option
+    
+    **Example Use Case:**
+    *Scroll down to load more products in infinite scroll*
+  </Card>
+
+  <Card title="Next Page">
+    **Description:**
+    Navigate through paginated content.
+    
+    **Settings:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Next page link selector
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Wait time for page load
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Maximum pages to process
+    
+    **Example Use Case:**
+    *Click through search result pages*
+  </Card>
+</CardGroup>
+
+## Usage Examples
+
+<CardGroup cols={2}>
+  <Card title="1. Product Scraping" icon="cart-shopping">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">.product-item</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Max Items</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">20</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Load More</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Scroll Down</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Wait Time</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">5 seconds</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Scroll To</span>
+        <span className="text-green-600">✓ Bottom</span>
+      </div>
+    </div>
+    <Note className="mt-2">Extracts product information from an infinite scroll page, loading 20 items</Note>
+  </Card>
+
+  <Card title="2. Blog Articles" icon="newspaper">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">.article-item</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Max Items</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">50</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Load More</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Click Link</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Next Link</span>
+        <code className="text-green-600">.next-page</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Wait Time</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">3 seconds</span>
+      </div>
+    </div>
+    <Note className="mt-2">Scrapes blog articles across multiple pages using pagination</Note>
+  </Card>
+
+  <Card title="3. Comment Processing" icon="comments">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">.comment-item</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Max Items</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">30</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Load More</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Click Element</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Button</span>
+        <code className="text-green-600">.show-more-comments</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Wait Time</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">4 seconds</span>
+      </div>
+    </div>
+    <Note className="mt-2">Process comments that load via "Show More" button, up to 30 items</Note>
+  </Card>
+
+  <Card title="4. Message History" icon="clock-rotate-left">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">.message</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Max Items</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0 (no limit)</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Reverse Order</span>
+        <span className="text-green-600">✓ Enabled</span>
+      </div>
+    </div>
+    <Note className="mt-2">Process all messages in reverse chronological order</Note>
+  </Card>
+
+  <Card title="5. Social Media Feed" icon="thumbs-up">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">.post-container</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Max Items</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">100</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Load More</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Scroll Down</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Wait Time</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">2 seconds</span>
+      </div>
+    </div>
+    <Note className="mt-2">Load social media posts through infinite scroll</Note>
+  </Card>
+
+  <Card title="6. Review Collection" icon="star">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Selector</span>
+        <code className="text-green-600">.review-box</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Max Items</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">200</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Load More</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Click Element</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Button</span>
+        <code className="text-green-600">.load-more-reviews</code>
+      </div>
+    </div>
+    <Note className="mt-2">Collect product reviews using load more button</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Test selectors to ensure they match the correct elements
+  - Set appropriate wait times for dynamic content
+  - Consider using Loop Breakpoint during testing
+  - Handle errors when elements fail to load
+</Warning> 

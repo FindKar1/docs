@@ -1,7 +1,75 @@
 ---
 title: "Export Data"
-description: "Export data from your automation workflow"
+description: "Export collected data from your automation workflow. Use this action to save table contents or variable values in various formats for analysis or storage."
 ---
 
-### Overview
-Documentation coming soon... 
+## Inputs
+
+### ☐ Prompt / Description *(Required)*
+A clear and concise instruction describing what this step should do. This helps the AI debug and adjust export logic if needed.
+
+<Note type="success">
+  **Good Example:** `"Export the table data as a CSV file for analysis."`
+</Note>
+
+<Note type="danger">
+  **Bad Example:** `"Save some data to a file."`
+  
+  **Why it's bad?** Too vague, lacks specificity about what data and format should be used.
+</Note>
+
+### ☐ Data Source *(Required)*
+<CardGroup cols={2}>
+  <Card title="Table">
+    Export contents of a structured table:
+    - Entire table contents
+    - Selected columns
+    - Filtered rows
+  </Card>
+  <Card title="Variable">
+    Export value stored in a variable:
+    - Single variable
+    - Multiple variables
+    - Computed values
+  </Card>
+</CardGroup>
+
+### ☐ Export Configuration *(Required)*
+<Card>
+  Configure the export settings:
+  - **File Name:** Name for the exported file
+  - **Format Type:**
+    - CSV (for spreadsheets)
+    - JSON (for structured data)
+    - Plain Text (for simple data)
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Exporting collected data">
+  ### ✅ Good Prompt:
+  *"Export the collected product data table as a CSV file."*
+
+  ### ✅ Export Configuration:
+  <Card>
+    Source: Table
+    Filename: `product_data.csv`
+    Format: CSV
+  </Card>
+
+  ### Alternative Example:
+  <Card>
+    Source: Variable
+    Variable: `user_session_token`
+    Filename: `session_data.json`
+    Format: JSON
+  </Card>
+</Card>
+
+## Notes
+<Warning>
+  - The **Prompt / Description** is required to help AI debug and adjust export settings if needed.
+  - Ensure filenames don't contain invalid characters.
+  - CSV is best for tabular data, JSON for nested structures.
+  - Consider file size and format compatibility with target systems.
+</Warning> 

@@ -1,7 +1,40 @@
 ---
 title: "Delay"
-description: "Add timed delays to your automation workflow"
+description: "Add timed delays to your automation workflow. Use this action to wait for elements to load, ensure actions complete, or simulate human-like interaction timing."
 ---
 
-### Overview
-Documentation coming soon... 
+## Overview
+
+The Delay block pauses the automation for a specified duration. This is particularly useful when:
+- Waiting for page elements to load
+- Ensuring animations complete
+- Simulating human-like interaction timing
+- Managing rate-limited operations
+
+## Configuration
+
+<Card>
+  This block requires:
+  - Delay duration in milliseconds
+  - Example: `2000` for 2 seconds
+  - Minimum: `100ms`
+  - Maximum: `30000ms` (30 seconds)
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Waiting for content to load">
+  ### Common Use Cases:
+  - After page navigation: `2000ms`
+  - After button clicks: `500ms`
+  - Before form submission: `1000ms`
+  - Between API calls: `3000ms`
+</Card>
+
+## Notes
+<Warning>
+  - Use delays sparingly—they make automation slower
+  - Consider using Wait For Element instead for dynamic content
+  - Shorter delays (100-500ms) work well for most UI interactions
+  - Longer delays might be needed for heavy page loads or rate limiting
+</Warning> 

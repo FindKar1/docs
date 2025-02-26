@@ -1,7 +1,385 @@
 ---
 title: "Conditions"
-description: "Add conditional logic to your automation workflows"
+description: "Add conditional logic to your automation workflows. Use this action to create branching paths, handle different scenarios, and make your automation more dynamic."
 ---
 
-### Overview
-Documentation coming soon... 
+## Overview
+
+The Conditions block allows your automation to make decisions and take different paths based on specific conditions. Think of it as adding "if-then" logic to your workflow.
+
+### Key Uses
+
+<CardGroup cols={2}>
+  <Card title="Creating Branching Logic">
+    Make your automation take different paths:
+    - If user is logged in → proceed to dashboard
+    - If user is not logged in → go to login page
+  </Card>
+  <Card title="Handling Different Scenarios">
+    Adapt to various situations:
+    - If item is in stock → add to cart
+    - If item is out of stock → join waitlist
+  </Card>
+  <Card title="Making Dynamic Decisions">
+    Respond to real-time conditions:
+    - If price is below $50 → purchase now
+    - If price is above $50 → save for later
+  </Card>
+  <Card title="Validating States">
+    Check conditions before proceeding:
+    - If form is complete → submit
+    - If errors exist → show message
+  </Card>
+</CardGroup>
+
+## Configuration
+
+### ☐ Description *(Optional)*
+A brief note explaining the purpose of the condition. This is not an AI prompt.
+
+<Note type="success">
+  **Good Example:** `"Check if the user is logged in before proceeding."`
+</Note>
+
+### First Dropdown: Condition Type
+
+This defines what the condition is checking.
+
+<table className="border-collapse border-spacing-0 w-full">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="border border-slate-300 p-3 text-left w-[12%]">Category</th>
+      <th className="border border-slate-300 p-3 text-left w-[18%]">Dropdown Options</th>
+      <th className="border border-slate-300 p-3 text-left w-[50%]">Description</th>
+      <th className="border border-slate-300 p-3 text-left w-[20%]">Additional Inputs Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-slate-300 p-3 font-semibold" rowspan="3">Values</td>
+      <td className="border border-slate-300 p-3">Value</td>
+      <td className="border border-slate-300 p-3">Compare a variable or computed value against another value</td>
+      <td className="border border-slate-300 p-3">Value input box</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Code</td>
+      <td className="border border-slate-300 p-3">Execute custom JavaScript code that returns true/false</td>
+      <td className="border border-slate-300 p-3">Code input box + Execution Context selection</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Data Exists</td>
+      <td className="border border-slate-300 p-3">Check if a specific variable exists in memory</td>
+      <td className="border border-slate-300 p-3">Input box for variable name (e.g., <code>variables@variableName</code>)</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3 font-semibold" rowspan="7">Element</td>
+      <td className="border border-slate-300 p-3">Element Text</td>
+      <td className="border border-slate-300 p-3">Check the text content of a specific element</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Element Exists</td>
+      <td className="border border-slate-300 p-3">Check if an element is present in the DOM</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Element Not Exists</td>
+      <td className="border border-slate-300 p-3">Check if an element is absent from the DOM</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Element Visible</td>
+      <td className="border border-slate-300 p-3">Check if an element is visible on the page</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Element Visible in Screen</td>
+      <td className="border border-slate-300 p-3">Check if an element is currently visible in the viewport</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Element Hidden in Screen</td>
+      <td className="border border-slate-300 p-3">Check if an element is outside the current viewport</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Element Attribute Value</td>
+      <td className="border border-slate-300 p-3">Check the value of a specific attribute on an element</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath + Attribute Name</td>
+    </tr>
+  </tbody>
+</table>
+
+<Note>
+  Select the appropriate condition type based on whether you're checking values (like variables or computations) or elements on the webpage.
+</Note>
+
+### Second Dropdown: Condition Operator
+
+Defines how the selected value/element is evaluated.
+
+<table className="border-collapse border-spacing-0 w-full">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="border border-slate-300 p-3 text-left w-[12%]">Category</th>
+      <th className="border border-slate-300 p-3 text-left w-[18%]">Dropdown Options</th>
+      <th className="border border-slate-300 p-3 text-left w-[50%]">Description</th>
+      <th className="border border-slate-300 p-3 text-left w-[20%]">Additional Inputs Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-slate-300 p-3 font-semibold" rowspan="3">Basic</td>
+      <td className="border border-slate-300 p-3">Equals</td>
+      <td className="border border-slate-300 p-3">Check if values are exactly the same (case insensitive)</td>
+      <td className="border border-slate-300 p-3">Comparison value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Equals (case sensitive)</td>
+      <td className="border border-slate-300 p-3">Check if values are exactly the same, including letter casing</td>
+      <td className="border border-slate-300 p-3">Comparison value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Not Equals</td>
+      <td className="border border-slate-300 p-3">Check if values are different</td>
+      <td className="border border-slate-300 p-3">Comparison value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3 font-semibold" rowspan="4">Number</td>
+      <td className="border border-slate-300 p-3">Greater than</td>
+      <td className="border border-slate-300 p-3">Check if value is larger than comparison</td>
+      <td className="border border-slate-300 p-3">Numeric value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Greater than or equal</td>
+      <td className="border border-slate-300 p-3">Check if value is larger than or equal to comparison</td>
+      <td className="border border-slate-300 p-3">Numeric value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Less than</td>
+      <td className="border border-slate-300 p-3">Check if value is smaller than comparison</td>
+      <td className="border border-slate-300 p-3">Numeric value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Less than or equal</td>
+      <td className="border border-slate-300 p-3">Check if value is smaller than or equal to comparison</td>
+      <td className="border border-slate-300 p-3">Numeric value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3 font-semibold" rowspan="7">Text</td>
+      <td className="border border-slate-300 p-3">Contains</td>
+      <td className="border border-slate-300 p-3">Check if text includes the comparison value</td>
+      <td className="border border-slate-300 p-3">Text value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Contains (case insensitive)</td>
+      <td className="border border-slate-300 p-3">Check if text includes the comparison value, ignoring case</td>
+      <td className="border border-slate-300 p-3">Text value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Not contains</td>
+      <td className="border border-slate-300 p-3">Check if text does not include the comparison value</td>
+      <td className="border border-slate-300 p-3">Text value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Not contains (case insensitive)</td>
+      <td className="border border-slate-300 p-3">Check if text does not include the comparison value, ignoring case</td>
+      <td className="border border-slate-300 p-3">Text value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Starts with</td>
+      <td className="border border-slate-300 p-3">Check if text begins with the comparison value</td>
+      <td className="border border-slate-300 p-3">Text value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Ends with</td>
+      <td className="border border-slate-300 p-3">Check if text ends with the comparison value</td>
+      <td className="border border-slate-300 p-3">Text value</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Match with RegEx</td>
+      <td className="border border-slate-300 p-3">Check if text matches a regular expression pattern</td>
+      <td className="border border-slate-300 p-3">RegEx pattern</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3 font-semibold" rowspan="2">Boolean</td>
+      <td className="border border-slate-300 p-3">Is truthy</td>
+      <td className="border border-slate-300 p-3">Check if value evaluates to true</td>
+      <td className="border border-slate-300 p-3">None</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Is falsey</td>
+      <td className="border border-slate-300 p-3">Check if value evaluates to false</td>
+      <td className="border border-slate-300 p-3">None</td>
+    </tr>
+  </tbody>
+</table>
+
+<Note>
+  Choose the operator that best matches your comparison needs. Basic operators work for simple equality, Number for numerical comparisons, Text for string operations, and Boolean for true/false checks.
+</Note>
+
+### Third Dropdown: Comparison Value
+
+Defines what the first value/element is being compared to.
+
+<table className="border-collapse border-spacing-0 w-full">
+  <thead>
+    <tr className="bg-slate-100">
+      <th className="border border-slate-300 p-3 text-left w-[12%]">Category</th>
+      <th className="border border-slate-300 p-3 text-left w-[18%]">Dropdown Options</th>
+      <th className="border border-slate-300 p-3 text-left w-[50%]">Description</th>
+      <th className="border border-slate-300 p-3 text-left w-[20%]">Additional Inputs Required</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td className="border border-slate-300 p-3 font-semibold">Value</td>
+      <td className="border border-slate-300 p-3">Value</td>
+      <td className="border border-slate-300 p-3">Compare against a manually entered value</td>
+      <td className="border border-slate-300 p-3">Manual value input</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3 font-semibold" rowspan="2">Element</td>
+      <td className="border border-slate-300 p-3">Element Text</td>
+      <td className="border border-slate-300 p-3">Compare against the text content of a specific element</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath</td>
+    </tr>
+    <tr>
+      <td className="border border-slate-300 p-3">Element Attribute Value</td>
+      <td className="border border-slate-300 p-3">Compare against a specific attribute value of an element</td>
+      <td className="border border-slate-300 p-3">CSS Selector or XPath + Attribute Name</td>
+    </tr>
+  </tbody>
+</table>
+
+<Note>
+  Select whether you want to compare against a static value you provide or against dynamic content from the webpage (like element text or attributes).
+</Note>
+
+## Special Cases
+
+<CardGroup cols={1}>
+  <Card title="Code Execution" icon="code">
+    A JavaScript code editor where you can write custom conditions. Choose context:
+    - **Background:** API calls, background operations
+    - **Active Tab:** DOM manipulation, browser interactions
+
+    ```js
+    // Example: Check if price is within budget
+    const price = document.querySelector('.price').innerText;
+    const numericPrice = parseFloat(price.replace('$', ''));
+    return numericPrice <= 100.00;
+
+    // Example: Check login status
+    return localStorage.getItem('isLoggedIn') === 'true';
+    ```
+
+    <Note>Must return boolean (true/false)</Note>
+  </Card>
+
+  <Card title="Data Exists" icon="database">
+    Checks if a variable exists in memory.
+    ```js
+    variables@variableName    // Case-sensitive
+    ```
+    Returns true if the variable is found.
+  </Card>
+
+  <Card title="Element Attributes" icon="brackets-curly">
+    Checks element attribute values using:
+    - CSS Selector or XPath
+    - Attribute name (e.g., `href`, `class`, `id`, `data-*`)
+    <Note>Attribute names are case-sensitive</Note>
+  </Card>
+</CardGroup>
+
+## Usage Examples
+
+### Basic Conditions
+
+<CardGroup cols={1}>
+  <Card title="1. Check if User is Logged In" icon="user-check">
+    <div className="flex items-center gap-2 text-sm">
+      <span className="px-2 py-1 bg-purple-100 rounded-md">First Dropdown</span> →
+      <span className="font-mono bg-slate-100 px-2 py-1 rounded">Element Exists</span> →
+      <span className="font-mono text-green-600">#profile-icon</span>
+    </div>
+    <div className="mt-2 flex items-center gap-2 text-sm">
+      <span className="px-2 py-1 bg-purple-100 rounded-md">Second Dropdown</span> →
+      <span className="font-mono bg-slate-100 px-2 py-1 rounded">Is truthy</span>
+    </div>
+    <Note className="mt-2">Checks if profile icon exists in the DOM</Note>
+  </Card>
+
+  <Card title="2. Check Product Stock Status" icon="box">
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">First</span> →
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Element Text</span> →
+        <span className="font-mono text-green-600">#stock-status</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Second</span> →
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Equals</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Third</span> →
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">"In Stock"</span>
+      </div>
+    </div>
+  </Card>
+
+  <Card title="3. Multiple Conditions Example" icon="code-branch">
+    <div className="border-l-2 border-purple-400 pl-4 mb-3">
+      <div className="text-sm font-semibold mb-2">Condition 1:</div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Element Text</span> →
+        <span className="font-mono text-green-600">#stock-status</span> →
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Equals</span> →
+        <span className="font-mono">"In Stock"</span>
+      </div>
+    </div>
+    
+    <div className="flex justify-center my-2">
+      <span className="px-3 py-1 bg-green-100 rounded-full font-semibold">+ AND</span>
+    </div>
+
+    <div className="border-l-2 border-purple-400 pl-4">
+      <div className="text-sm font-semibold mb-2">Condition 2:</div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Element Text</span> →
+        <span className="font-mono text-green-600">.price</span> →
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Less than</span> →
+        <span className="font-mono">50.00</span>
+      </div>
+    </div>
+  </Card>
+</CardGroup>
+
+### Multiple Conditions
+
+<CardGroup cols={2}>
+  <Card title="AND Logic" icon="plus">
+    - Add conditions using "AND"
+    - All conditions must be true
+    - Useful for complex validations
+  </Card>
+
+  <Card title="OR Logic" icon="code-branch">
+    - Add conditions using "OR"
+    - Any condition can be true
+    - Useful for alternative paths
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Paths are evaluated in order—first matching path is followed
+  - Multiple conditions with AND require all conditions to be true
+  - Multiple conditions with OR require any condition to be true
+  - Conditions can be nested for complex logic
+  - Consider using descriptive names for clarity
+  - Test complex conditions thoroughly
+  - Verify selectors and attributes before use
+</Warning> 

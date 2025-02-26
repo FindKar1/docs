@@ -1,7 +1,75 @@
 ---
 title: "Loop Breakpoint"
-description: "Control loop execution with breakpoints"
+description: "Control loop execution with breakpoints for testing and debugging"
 ---
 
-### Overview
-Documentation coming soon... 
+The Loop Breakpoint block allows you to control and test loops within your automation. Use it to prevent excessive iterations during debugging or to validate loop behavior.
+
+## Inputs
+
+### ☐ Loop Reference *(Required)*
+Select which loop in your automation this breakpoint will control.
+
+<Note type="success">
+  **Example:** Select the product scraping loop to test product data extraction
+</Note>
+
+### ☐ Stop Loop *(Required)*
+Choose whether to halt the loop after one iteration:
+- **Unchecked (Default):** Loop runs fully as intended
+- **Checked:** Loop executes only once for testing
+
+## Usage Examples
+
+<CardGroup cols={1}>
+  <Card title="1. Testing Product Scraper" icon="bug">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Loop</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Product List Loop</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Stop Loop</span>
+        <span className="text-green-600">✓ Enabled</span>
+      </div>
+    </div>
+    <Note className="mt-2">Tests extraction of first product before running full loop</Note>
+  </Card>
+
+  <Card title="2. Production Email Sender" icon="envelope">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Loop</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Customer Email Loop</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Stop Loop</span>
+        <span className="text-red-600">✗ Disabled</span>
+      </div>
+    </div>
+    <Note className="mt-2">Processes all customer emails in production</Note>
+  </Card>
+</CardGroup>
+
+## When to Use
+
+<CardGroup cols={2}>
+  <Card title="Debugging" icon="bug">
+    - Enable Stop Loop during testing
+    - Validates loop behavior quickly
+    - Prevents unwanted iterations
+  </Card>
+  
+  <Card title="Production" icon="rocket">
+    - Disable Stop Loop for full execution
+    - Processes all iterations as intended
+    - Normal automation operation
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Always test loops with Stop Loop enabled first
+  - Remember to disable Stop Loop before deploying to production
+  - Useful for validating complex loop logic
+</Warning> 

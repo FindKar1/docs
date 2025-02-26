@@ -1,7 +1,113 @@
 ---
 title: "Repeat Task"
-description: "Learn how to repeat automation tasks a specified number of times"
+description: "Repeat specific tasks multiple times in your automation"
 ---
 
-### Overview
-Documentation coming soon...
+The Repeat Task block allows you to run a specific sequence of blocks multiple times. Unlike Loop Data or Loop Elements, this block is perfect for simple repetitions where you don't need to iterate through data.
+
+## Inputs
+
+### ☐ Number of Times *(Required)*
+How many times to repeat the selected sequence.
+
+<Note type="success">
+  **Good Examples:**
+  - "5" to fill out a form five times
+  - "3" to retry a failed action
+  - "10" to test a process multiple times
+</Note>
+
+<Note type="danger">
+  **Invalid Values:**
+  - "0" (must be 1 or higher)
+  - Negative numbers
+</Note>
+
+### ☐ Start Block *(Required)*
+Choose which block to start repeating from:
+
+<CardGroup cols={1}>
+  <Card title="Block Selection">
+    **Description:**
+    Drag the connection to link with your starting block.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Visual connection line shows the link
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Can select any previous block
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Clear visual feedback when connected
+    
+    **Best Practice:**
+    *Select the first block in your sequence to repeat*
+  </Card>
+</CardGroup>
+
+## Usage Examples
+
+<CardGroup cols={2}>
+  <Card title="1. Form Submission" icon="clipboard">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Times</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">5</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Start</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Fill Form Block</span>
+      </div>
+    </div>
+    <Note className="mt-2">Submit the same form multiple times with different data</Note>
+  </Card>
+
+  <Card title="2. Retry Action" icon="rotate">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Times</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">3</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Start</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Click Button Block</span>
+      </div>
+    </div>
+    <Note className="mt-2">Retry clicking a button that might fail due to loading</Note>
+  </Card>
+
+  <Card title="3. Testing Loop" icon="vial">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Times</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">10</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Start</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Login Block</span>
+      </div>
+    </div>
+    <Note className="mt-2">Test a login system multiple times</Note>
+  </Card>
+
+  <Card title="4. Data Generation" icon="database">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Times</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">100</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Start</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Generate Data Block</span>
+      </div>
+    </div>
+    <Note className="mt-2">Generate test data by repeating a process</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Use Loop Data instead if you need to iterate through datasets
+  - Ensure your repeat count is reasonable to prevent excessive runs
+  - Consider using conditions to break the repeat if needed
+  - Test with a small number of repeats first
+</Warning>

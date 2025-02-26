@@ -1,7 +1,37 @@
 ---
 title: "Active Tab"
-description: "Learn how to manage and interact with the currently active browser tab"
+description: "Manage and interact with the currently active browser tab. Use this action to ensure your automation continues in the focused tab when working with multiple windows."
 ---
 
-### Overview
-Documentation coming soon... 
+## Overview
+
+The Active Tab block ensures that your automation runs on the currently focused browser tab. This is particularly useful when:
+- Working with multiple open tabs
+- Handling manual tab switches
+- Ensuring actions execute in the correct window
+
+## Behavior
+
+<Card>
+  This block:
+  - Confirms the currently active tab
+  - Ensures subsequent actions run in this tab
+  - Does not switch between tabs
+  - Does not require any configuration
+</Card>
+
+## Usage Example
+
+<Card title="Scenario: Multi-tab workflow">
+  ### Common Use Cases:
+  - After manual tab switching
+  - Following a New Tab action
+  - When tab focus might have changed
+</Card>
+
+## Notes
+<Warning>
+  - This block does not switch between tabs—it only confirms the active tab
+  - If you need to switch tabs, use the New Tab block or manual navigation first
+  - Useful for maintaining workflow continuity in multi-tab scenarios
+</Warning> 
