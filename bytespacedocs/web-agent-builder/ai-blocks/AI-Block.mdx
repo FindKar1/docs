@@ -3,5 +3,118 @@ title: "AI Block"
 description: "Learn how to use AI-powered automation blocks for intelligent web interactions"
 ---
 
-### Overview
-Documentation coming soon...
+The AI Block integrates language models (LLMs) into your workflow, allowing you to generate AI-powered outputs based on prompts and store the generated content for later use.
+
+## Inputs
+
+### ☐ Model Selection *(Required)*
+Choose which LLM to use for generating responses:
+
+<CardGroup cols={1}>
+  <Card title="Available Models">
+    **Options:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ GPT-4o mini (fastest, most economical)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ GPT-4o (balanced performance)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Claude 3.5 Sonnet (highest accuracy)
+  </Card>
+</CardGroup>
+
+### ☐ AI Prompt *(Required)*
+Enter the text prompt for the AI to process.
+
+<Note type="success">
+  **Prompt Best Practices:**
+  - Be clear and specific
+  - Include examples or constraints
+  - Provide necessary context
+</Note>
+
+### ☐ Output Options *(Required)*
+Choose where to store the AI-generated response:
+
+<CardGroup cols={1}>
+  <Card title="Storage Options">
+    **Options:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Assign to Variable (store in new variable)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Insert to Table (update existing table)
+    
+    **Note:** You can select both options to store results in multiple locations
+  </Card>
+</CardGroup>
+
+## Use Cases
+- **Content Generation** → Create blog summaries, descriptions, or emails
+- **Data Transformation** → Convert messy text into structured formats
+- **Decision Making** → Generate AI-driven suggestions based on input
+- **Automated Insights** → Extract insights from customer queries or documents
+
+## Usage Examples
+
+<CardGroup cols={1}>
+  <Card title="1. Customer Support Replies" icon="message">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Model</span>
+        <code className="text-green-600">GPT-4o</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Prompt</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Generate a polite response for a refund policy inquiry</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Output</span>
+        <code className="text-green-600">customer_reply</code>
+      </div>
+    </div>
+    <Note className="mt-2">Generate automated customer support responses</Note>
+  </Card>
+
+  <Card title="2. Review Summarization" icon="star">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Model</span>
+        <code className="text-green-600">Claude 3.5 Sonnet</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Prompt</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Summarize these reviews in 2 sentences</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Table</span>
+        <code className="text-green-600">Reviews.Summary</code>
+      </div>
+    </div>
+    <Note className="mt-2">Automatically summarize product reviews</Note>
+  </Card>
+
+  <Card title="3. Sales Pitch Generation" icon="bullhorn">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Model</span>
+        <code className="text-green-600">GPT-4o mini</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Prompt</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Create a sales pitch for {product} for {audience}</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Output</span>
+        <code className="text-green-600">sales_pitch</code>
+      </div>
+    </div>
+    <Note className="mt-2">Generate personalized sales pitches</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Use clear, structured prompts
+  - Choose appropriate model for task
+  - Consider cost and performance tradeoffs
+  - Test outputs before automation
+</Warning>
