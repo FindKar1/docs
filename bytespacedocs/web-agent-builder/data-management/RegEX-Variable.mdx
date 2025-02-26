@@ -3,5 +3,136 @@ title: "RegEX Variable"
 description: "Use regular expressions to manipulate variables"
 ---
 
-### Overview
-Documentation coming soon... 
+The RegEX Variable block enables you to use regular expressions to extract or modify text data in your variables.
+
+## Inputs
+
+### ☐ Variable Name *(Required)*
+The name of the variable to process with RegEx.
+
+<Note type="success">
+  **Good Examples:**
+  - "emailText"
+  - "phoneData"
+  - "rawContent"
+</Note>
+
+### ☐ Method *(Required)*
+Choose how to apply the RegEx:
+
+<CardGroup cols={1}>
+  <Card title="RegEx Operations">
+    **Description:**
+    Select the operation to perform.
+    
+    **Options:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Match value (extract matching text)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Replace value (substitute matching text)
+    
+    **Flags Available:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ g (global match)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ i (case insensitive)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ m (multiline)
+  </Card>
+</CardGroup>
+
+### ☐ RegEx Pattern *(Required)*
+The regular expression pattern to use.
+
+<Card title="Email Pattern">
+  ```plaintext
+  [\w.]+@[\w.]+\.\w{2,}
+  ```
+</Card>
+
+<Card title="Phone Pattern (US Format)">
+  ```plaintext
+  \d{3}[-.]?\d{3}[-.]?\d{4}
+  ```
+</Card>
+
+<Card title="URL Pattern">
+  ```plaintext
+  https?:\/\/\S+
+  ```
+</Card>
+
+<Note>
+  Add flags after the pattern:
+  - `/pattern/g` for global matching
+  - `/pattern/i` for case-insensitive
+  - `/pattern/m` for multiline
+</Note>
+
+## Usage Examples
+
+<CardGroup cols={2}>
+  <Card title="1. Email Extraction" icon="envelope">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">emailText</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Method</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Match</span>
+      </div>
+    </div>
+    <Note className="mt-2">Extract email addresses from text</Note>
+  </Card>
+
+  <Card title="2. Phone Cleanup" icon="phone">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">phoneNum</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Method</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Replace</span>
+      </div>
+    </div>
+    <Note className="mt-2">Remove non-numeric characters from phone numbers</Note>
+  </Card>
+
+  <Card title="3. URL Finding" icon="link">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">pageContent</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Method</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Match</span>
+      </div>
+    </div>
+    <Note className="mt-2">Extract URLs from webpage content</Note>
+  </Card>
+
+  <Card title="4. Text Censoring" icon="eye-slash">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">comment</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Method</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Replace</span>
+      </div>
+    </div>
+    <Note className="mt-2">Replace inappropriate words with ****</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Test patterns before using
+  - Use appropriate flags as needed
+  - Consider performance with large datasets
+  - Backup variables before replacement operations
+</Warning> 

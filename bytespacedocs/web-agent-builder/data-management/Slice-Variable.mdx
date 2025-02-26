@@ -3,5 +3,106 @@ title: "Slice Variable"
 description: "Extract portions of data from variables"
 ---
 
-### Overview
-Documentation coming soon... 
+The Slice Variable block allows you to extract specific portions of variables, such as parts of text strings or segments of lists.
+
+## Inputs
+
+### ☐ Variable Name *(Required)*
+The name of the variable you want to slice.
+
+<Note type="success">
+  **Good Examples:**
+  - "emailText"
+  - "productList"
+  - "description"
+</Note>
+
+### ☐ Start Index *(Required)*
+The position where the slice should begin (starts at 0).
+
+### ☐ End Index *(Optional)*
+The position where the slice should end (exclusive).
+
+<CardGroup cols={1}>
+  <Card title="Slicing Rules">
+    **Description:**
+    Define how the variable should be sliced.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Start from beginning (index 0)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ End optional (slice to end if omitted)
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Works with text and lists
+    
+    **Example:**
+    *"hello" with start:1, end:4 becomes "ell"*
+  </Card>
+</CardGroup>
+
+## Usage Examples
+
+<CardGroup cols={2}>
+  <Card title="1. Email Username" icon="envelope">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">email</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Start</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">End</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">8</span>
+      </div>
+    </div>
+    <Note className="mt-2">Extract username from email address</Note>
+  </Card>
+
+  <Card title="2. List Selection" icon="list">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">productList</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Start</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">End</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">5</span>
+      </div>
+    </div>
+    <Note className="mt-2">Get first 5 items from list</Note>
+  </Card>
+
+  <Card title="3. Text Trimming" icon="scissors">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">description</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Start</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">End</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">50</span>
+      </div>
+    </div>
+    <Note className="mt-2">Shorten text to first 50 characters</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Check variable length before slicing
+  - Start index must be less than end index
+  - Indexes start at 0
+  - End index is optional
+</Warning> 

@@ -3,5 +3,128 @@ title: "Increase Variable"
 description: "Increment numerical variables in your workflow"
 ---
 
-### Overview
-Documentation coming soon... 
+The Increase Variable block allows you to increment a numeric variable by a specified amount. This is particularly useful for counters, loops, and tracking progress in your automation.
+
+## Inputs
+
+### ☐ Variable Name *(Required)*
+The name of the variable you want to increase.
+
+<Note type="success">
+  **Good Examples:**
+  - "counter"
+  - "pageNumber"
+  - "retryCount"
+</Note>
+
+<Note type="danger">
+  **Invalid Values:**
+  - Empty variable name
+  - Non-existent variables
+  - Non-numeric variables
+</Note>
+
+### ☐ Increase By *(Required)*
+The amount to increase the variable by:
+
+<CardGroup cols={1}>
+  <Card title="Increment Value">
+    **Description:**
+    Specify how much to increase the variable.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Can use positive numbers to increase
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Can use negative numbers to decrease
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Supports decimal values
+    
+    **Example Use Case:**
+    *Increment by 1 to count iterations*
+  </Card>
+</CardGroup>
+
+## Usage Examples
+
+<CardGroup cols={2}>
+  <Card title="1. Loop Counter" icon="arrow-rotate-right">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">counter</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Initial</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Increase</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">1</span>
+      </div>
+    </div>
+    <Note className="mt-2">Track iterations in a loop</Note>
+  </Card>
+
+  <Card title="2. Page Navigation" icon="book">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">pageNumber</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Initial</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">1</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Increase</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">1</span>
+      </div>
+    </div>
+    <Note className="mt-2">Navigate through paginated content</Note>
+  </Card>
+
+  <Card title="3. Retry Counter" icon="rotate">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">retryCount</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Initial</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Increase</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">1</span>
+      </div>
+    </div>
+    <Note className="mt-2">Track number of retry attempts</Note>
+  </Card>
+
+  <Card title="4. Score Tracking" icon="star">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Variable</span>
+        <code className="text-green-600">score</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Initial</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Increase</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">10</span>
+      </div>
+    </div>
+    <Note className="mt-2">Increment score by points earned</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Variable must exist before increasing
+  - Only works with numeric variables
+  - Consider using conditions to check maximum values
+  - Initialize variables with Insert Data block first
+</Warning> 

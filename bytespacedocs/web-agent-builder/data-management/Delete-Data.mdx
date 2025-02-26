@@ -3,5 +3,121 @@ title: "Delete Data"
 description: "Remove data from your automation workflow variables"
 ---
 
-### Overview
-Documentation coming soon... 
+The Delete Data block allows you to remove data from tables or variables in your workflow. This is useful for cleaning up temporary data or removing unnecessary information before completing your automation.
+
+## Inputs
+
+### ☐ Description *(Optional)*
+A brief note explaining what data you're deleting.
+
+<Note type="success">
+  **Good Examples:**
+  - "Remove temporary processing variables"
+  - "Clear sensitive login data"
+  - "Delete intermediate calculation results"
+</Note>
+
+### ☐ Data Type *(Required)*
+Choose what type of data to delete:
+
+<CardGroup cols={1}>
+  <Card title="Table Columns">
+    **Description:**
+    Remove data from specific table columns.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Delete multiple columns at once
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Clear specific rows or all data
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Keep table structure intact
+    
+    **Example Use Case:**
+    *Removing temporary calculation columns after processing*
+  </Card>
+
+  <Card title="Variables">
+    **Description:**
+    Delete specific variables from the workflow.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Remove single or multiple variables
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Clear variable contents
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Free up workflow memory
+    
+    **Example Use Case:**
+    *Clearing login credentials after use*
+  </Card>
+</CardGroup>
+
+## Usage Examples
+
+<CardGroup cols={2}>
+  <Card title="1. Cleanup Processing" icon="broom">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Table</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Columns</span>
+        <code className="text-green-600">temp_data, calculations</code>
+      </div>
+    </div>
+    <Note className="mt-2">Remove temporary processing columns after analysis</Note>
+  </Card>
+
+  <Card title="2. Security Cleanup" icon="shield">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Variables</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Names</span>
+        <code className="text-green-600">password, token</code>
+      </div>
+    </div>
+    <Note className="mt-2">Clear sensitive authentication data after use</Note>
+  </Card>
+
+  <Card title="3. Data Reset" icon="rotate-right">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Table</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Action</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Clear All</span>
+      </div>
+    </div>
+    <Note className="mt-2">Reset table data before new processing cycle</Note>
+  </Card>
+
+  <Card title="4. Memory Management" icon="microchip">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Variables</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Names</span>
+        <code className="text-green-600">tempArray, buffer</code>
+      </div>
+    </div>
+    <Note className="mt-2">Free up memory by removing large temporary variables</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Deleted data cannot be recovered
+  - Verify data is no longer needed before deletion
+  - Consider backing up important data first
+  - Check for dependencies before removing variables
+</Warning> 

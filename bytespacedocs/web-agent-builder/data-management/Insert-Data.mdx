@@ -1,7 +1,139 @@
 ---
 title: "Insert Data"
-description: "Learn how to insert and manage data in your automation workflow"
+description: "Add data directly into your workflow"
 ---
 
-### Overview
-Documentation coming soon...
+The Insert Data block enables you to add values into your workflow, either by inserting into table columns or creating variables. This is perfect for setting up initial data or creating dynamic values during automation.
+
+## Inputs
+
+### ☐ Description *(Optional)*
+A brief note explaining what data you're inserting.
+
+<Note type="success">
+  **Good Examples:**
+  - "Add customer details to table"
+  - "Set default configuration values"
+  - "Initialize counter variables"
+</Note>
+
+### ☐ Data Type *(Required)*
+Choose where to insert your data:
+
+<CardGroup cols={1}>
+  <Card title="Table Columns">
+    **Description:**
+    Add data to specific columns in a table.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Insert multiple values at once
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Data added as new rows
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Supports all data types
+    
+    **Example Use Case:**
+    *Adding customer name and email to a contacts table*
+  </Card>
+
+  <Card title="Variables">
+    **Description:**
+    Create and assign values to variables.
+    
+    **Features:**
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Create new variables
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Assign dynamic values
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;☐ Reference in later steps
+    
+    **Example Use Case:**
+    *Setting a counter variable to track iterations*
+  </Card>
+</CardGroup>
+
+## Usage Examples
+
+<CardGroup cols={2}>
+  <Card title="1. Customer Data" icon="user">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Table</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Columns</span>
+        <code className="text-green-600">name, email</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Values</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">John, john@email.com</span>
+      </div>
+    </div>
+    <Note className="mt-2">Add new customer details to contacts table</Note>
+  </Card>
+
+  <Card title="2. Configuration" icon="gear">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Variables</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Names</span>
+        <code className="text-green-600">maxRetries, delay</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Values</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">3, 1000</span>
+      </div>
+    </div>
+    <Note className="mt-2">Set configuration variables for workflow</Note>
+  </Card>
+
+  <Card title="3. Product Details" icon="box">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Table</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Columns</span>
+        <code className="text-green-600">id, name, price</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Values</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">101, Widget, 29.99</span>
+      </div>
+    </div>
+    <Note className="mt-2">Add new product to inventory table</Note>
+  </Card>
+
+  <Card title="4. Counter Setup" icon="calculator">
+    <div className="flex flex-col space-y-2">
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Type</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">Variables</span>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Names</span>
+        <code className="text-green-600">counter, total</code>
+      </div>
+      <div className="flex items-center gap-2 text-sm">
+        <span className="px-2 py-1 bg-purple-100 rounded-md">Values</span>
+        <span className="font-mono bg-slate-100 px-2 py-1 rounded">0, 100</span>
+      </div>
+    </div>
+    <Note className="mt-2">Initialize counter variables for tracking</Note>
+  </Card>
+</CardGroup>
+
+## Notes
+<Warning>
+  - Use descriptive variable names for better readability
+  - Ensure table column names match exactly
+  - Only add the data you need to avoid workflow bloat
+  - Consider using variables for values you'll modify later
+</Warning>
