@@ -105,30 +105,14 @@
           "group": "Best Practices",
           "icon": "lightbulb",
           "pages": [
-            "bytespacedocs/new-to-bytespace/best-practices/Overview",
-            "bytespacedocs/new-to-bytespace/best-practices/Choosing-Automation-Blocks",
-            "bytespacedocs/new-to-bytespace/best-practices/Selecting-Web-Elements",
-            "bytespacedocs/new-to-bytespace/best-practices/Avoiding-Account-Blocks",
-            "bytespacedocs/new-to-bytespace/best-practices/Debugging-Error-Handling",
-            "bytespacedocs/new-to-bytespace/best-practices/Performance-Optimization",
-            "bytespacedocs/new-to-bytespace/best-practices/Handling-Authentication",
-            "bytespacedocs/new-to-bytespace/best-practices/Advanced-Automation",
-            "bytespacedocs/new-to-bytespace/best-practices/Security-Compliance",
-            "bytespacedocs/new-to-bytespace/best-practices/Using-AI-Effectively",
-            "bytespacedocs/new-to-bytespace/best-practices/Popular-Websites",
-            "bytespacedocs/new-to-bytespace/best-practices/Respecting-TOS"
+            "bytespacedocs/new-to-bytespace/best-practices/Overview"
           ]
         },
         {
           "group": "Troubleshooting",
           "icon": "triangle-exclamation",
           "pages": [
-            "bytespacedocs/new-to-bytespace/troubleshooting/Element-selector",
-            "bytespacedocs/new-to-bytespace/troubleshooting/nodes",
-            "bytespacedocs/new-to-bytespace/troubleshooting/enhance-selector",
-            "bytespacedocs/new-to-bytespace/troubleshooting/ai-debugger",
-            "bytespacedocs/new-to-bytespace/troubleshooting/test-run",
-            "bytespacedocs/new-to-bytespace/troubleshooting/logs"
+            "bytespacedocs/new-to-bytespace/troubleshooting/Coming-Soon"
           ]
         }
       ]
