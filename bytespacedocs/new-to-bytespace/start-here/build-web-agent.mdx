@@ -24,17 +24,65 @@ Before we jump into the more advanced stuff, let's familiarize ourselves with th
 <Tabs>
   <Tab title="Twitter">
     ### Post a Tweet
-    
+
+    In this automation, you'll create a simple workflow that posts a tweet. While this just scratches the surface of Bytespace's capabilities, it's perfect for getting familiar with the builder and scoring a quick win.
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/gtyW2SpTuQo"
+      title="Post a Tweet Tutorial"
+      frameBorder="0"
+      allow="clipboard-write"
+      style={{ width: '100%', borderRadius: '0.5rem' }}
+    ></iframe>
+
+    **Difficulty Level:** Easy
+
+    **Creation Method:** AI Prompts
+
+    <CardGroup cols={2}>
+      <Card title="Inputs">
+        - Tweet text
+      </Card>
+      <Card title="Outputs">
+        - Posted tweet on Twitter
+      </Card>
+    </CardGroup>
+
+    ### Steps to Create This Automation:
+
+    <Info>
+      This block is created entirely through AI prompts. Click on the "+" button next to the starting automation block and enter the following prompts 1 at a time:
+    </Info>
+
     <Warning>
-      **Tutorial Coming Soon!** We're working on a step-by-step guide to help you automate your Twitter posting.
+      **Important:** Execute each prompt individually. Multi-step prompts are coming soon, but for now, create and run each step one at a time.
     </Warning>
 
-    <Card>
-      When ready, you'll be able to:
-      - Schedule single tweets
-      - Set basic posting times
-      - Track engagement metrics
-    </Card>
+    1. #### **Opening Twitter**
+       
+       ***Prompt:***
+       ```
+       open www.x.com
+       ```
+       ***Created Block:*** <a href="/bytespacedocs/web-agent-builder/navigation/New-Tab" style={{ textDecoration: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}><span style={{ backgroundColor: '#0066FF', color: 'white', padding: '2px 8px', borderRadius: '12px', fontSize: '0.9em', display: 'inline-block' }}>New Tab</span></a>
+
+    2. #### **Creating the Tweet Input**
+       
+       ***Prompt:***
+       ```
+       Click on the make a post input box and type in "This is my first @BytespaceAI automation!", and make it a text input in the workflow.
+       ```
+       ***Created Block:*** <a href="/bytespacedocs/web-agent-builder/actions/Forms" style={{ textDecoration: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}><span style={{ backgroundColor: '#0066FF', color: 'white', padding: '2px 8px', borderRadius: '12px', fontSize: '0.9em', display: 'inline-block' }}>Forms</span></a>
+
+    3. #### **Posting the Tweet**
+       
+       ***Prompt:***
+       ```
+       Click on the Post button to post the tweet
+       ```
+       ***Created Block:*** <a href="/bytespacedocs/web-agent-builder/actions/Click-Element" style={{ textDecoration: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}><span style={{ backgroundColor: '#0066FF', color: 'white', padding: '2px 8px', borderRadius: '12px', fontSize: '0.9em', display: 'inline-block' }}>Click Element</span></a>
   </Tab>
   <Tab title="LinkedIn">
     ### Send Connection Requests
@@ -73,3 +121,4 @@ So what's next - Reddit? Crunchbase? Wikipedia? Any website is possible; where y
 ### Ready to Test?
 
 But before we get ahead of ourselves, let's learn about the different ways we can test complex workflows as we're building them.
+
