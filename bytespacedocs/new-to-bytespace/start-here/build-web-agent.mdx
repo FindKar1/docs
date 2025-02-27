@@ -22,7 +22,7 @@ description: "Let's walk through the web-agent builder and create your first aut
 Before we jump into the more advanced stuff, let's familiarize ourselves with the game and build something simple. Get some easy buckets, put some points on the board.
 
 <Tabs>
-  <Tab title="Twitter">
+  <Tab title="Twitter - easy">
     ### Post a Tweet
 
     In this automation, you'll create a simple workflow that posts a tweet. While this just scratches the surface of Bytespace's capabilities, it's perfect for getting familiar with the builder and scoring a quick win.
@@ -33,7 +33,8 @@ Before we jump into the more advanced stuff, let's familiarize ourselves with th
       src="https://www.youtube.com/embed/gtyW2SpTuQo"
       title="Post a Tweet Tutorial"
       frameBorder="0"
-      allow="clipboard-write"
+      allow="clipboard-write; fullscreen"
+      allowFullScreen
       style={{ width: '100%', borderRadius: '0.5rem' }}
     ></iframe>
 
@@ -84,7 +85,45 @@ Before we jump into the more advanced stuff, let's familiarize ourselves with th
        ```
        ***Created Block:*** <a href="/bytespacedocs/web-agent-builder/actions/Click-Element" style={{ textDecoration: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}><span style={{ backgroundColor: '#0066FF', color: 'white', padding: '2px 8px', borderRadius: '12px', fontSize: '0.9em', display: 'inline-block' }}>Click Element</span></a>
   </Tab>
-  <Tab title="LinkedIn">
+
+  <Tab title="YouTube (medium)">
+    ### Transcribe Videos
+    
+    In this automation, you'll create a workflow that transcribes YouTube videos and generates email newsletters. While more complex than the Twitter example, it showcases how Bytespace can handle multi-step processes and AI integration.
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/I98lt9UsOxc?si=gzYyUuJxzGALjhdz"
+      title="YouTube Transcription Tutorial"
+      frameBorder="0"
+      allow="clipboard-write; fullscreen"
+      allowFullScreen
+      style={{ width: '100%', borderRadius: '0.5rem' }}
+    ></iframe>
+
+    **Difficulty Level:** Medium
+
+    **Creation Method:** AI Prompts + Manual Editing
+
+    <CardGroup cols={2}>
+      <Card title="Inputs">
+        - YouTube channel URL
+        - Email to send to
+        - ChatGPT prompts (optional)
+      </Card>
+      <Card title="Outputs">
+        - YouTube transcript
+        - Email newsletter with video details
+      </Card>
+    </CardGroup>
+
+    <Warning>
+      **Tutorial Coming Soon!** We're working on a detailed guide for this automation.
+    </Warning>
+  </Tab>
+
+    <Tab title="LinkedIn - hard">
     ### Send Connection Requests
     
     <Warning>
@@ -98,20 +137,7 @@ Before we jump into the more advanced stuff, let's familiarize ourselves with th
       - Track networking metrics
     </Card>
   </Tab>
-  <Tab title="YouTube">
-    ### Transcribe Videos
-    
-    <Warning>
-      **Tutorial Coming Soon!** We're working on a step-by-step guide to help you automate your YouTube video transcriptions.
-    </Warning>
 
-    <Card>
-      When ready, you'll be able to:
-      - Generate accurate transcripts
-      - Support multiple languages
-      - Export in various formats
-    </Card>
-  </Tab>
 </Tabs>
 
 <Note>
