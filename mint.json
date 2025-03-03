@@ -49,6 +49,7 @@
           "icon": "font-awesome",
           "pages": [
             "bytespacedocs/new-to-bytespace/start-here/install-bytespace",
+            "bytespacedocs/new-to-bytespace/start-here/platform-walkthrough",
             "bytespacedocs/new-to-bytespace/start-here/build-web-agent",
             "bytespacedocs/new-to-bytespace/start-here/test-workflow",
             "bytespacedocs/new-to-bytespace/start-here/run-and-schedule",
