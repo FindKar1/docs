@@ -37,8 +37,7 @@
     {
       "group": "Docs",
       "pages": [
-        "bytespacedocs/welcome",
-        "bytespacedocs/overview"
+        "bytespacedocs/welcome"
       ]
     },
     {
